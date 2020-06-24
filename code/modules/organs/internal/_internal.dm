@@ -145,7 +145,7 @@ obj/item/organ/internal/take_general_damage(var/amount, var/silent = FALSE)
 
 /obj/item/organ/internal/proc/get_visible_state()
 	if(damage > max_damage)
-		. = "bits and pieces of a destroyed "
+		. = "pedazos de un destruido"
 	else if(is_broken())
 		. = "roto "
 	else if(is_bruised())

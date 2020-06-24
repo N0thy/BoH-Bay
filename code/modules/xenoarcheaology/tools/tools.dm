@@ -21,10 +21,10 @@
 
 /mob/living/carbon/human/Stat()
 	. = ..()
-	if(statpanel("Status"))
+	if(statpanel("Estatus"))
 		var/obj/item/device/gps/L = locate() in src
 		if(L)
-			stat("Coordinates:", "[L.get_coordinates()]")
+			stat("Coordenadas:", "[L.get_coordinates()]")
 
 /obj/item/device/measuring_tape
 	name = "cinta metrica"
