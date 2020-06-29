@@ -85,9 +85,9 @@
 
 /mob/living/carbon/human/Stat()
 	. = ..()
-	if(statpanel("Status"))
-		stat("Intent:", "[a_intent]")
-		stat("Move Mode:", "[move_intent.name]")
+	if(statpanel("Estatus"))
+		stat("Intencion:", "[a_intent]")
+		stat("Modo de movimiento:", "[move_intent.name]")
 
 		if(evacuation_controller)
 			var/eta_status = evacuation_controller.get_status_panel_eta()
@@ -100,21 +100,21 @@
 			else
 				stat("Internal Atmosphere Info", internal.name)
 				stat("Tank Pressure", internal.air_contents.return_pressure())
-				stat("Distribution Pressure", internal.distribute_pressure)
+				stat("Distribucion de presionDistribution Pressure", internal.distribute_pressure)
 
 		var/obj/item/organ/internal/cell/potato = internal_organs_by_name[BP_CELL]
 		if(potato && potato.cell)
-			stat("Battery charge:", "[potato.get_charge()]/[potato.cell.maxcharge]")
+			stat("Carga de bateria:", "[potato.get_charge()]/[potato.cell.maxcharge]")
 
 		if(back && istype(back,/obj/item/weapon/rig))
 			var/obj/item/weapon/rig/suit = back
 			var/cell_status = "ERROR"
 			if(suit.cell) cell_status = "[suit.cell.charge]/[suit.cell.maxcharge]"
-			stat(null, "Suit charge: [cell_status]")
+			stat(null, "Bateria del traje: [cell_status]")
 
 		if(mind)
 			if(mind.changeling)
-				stat("Chemical Storage", mind.changeling.chem_charges)
+				stat("Almacenamiento quimico", mind.changeling.chem_charges)
 				stat("Genetic Damage Time", mind.changeling.geneticdamage)
 
 /mob/living/carbon/human/ex_act(severity)
@@ -1404,7 +1404,7 @@
 /mob/living/carbon/human/proc/undislocate()
 	set category = "Object"
 	set name = "Undislocate Joint"
-	set desc = "Pop a joint back into place. Extremely painful."
+	set desc = "Vuelve a poner una articulacion a su sitio. Extremadamente doloroso."
 	set src in view(1)
 
 	if(!isliving(usr) || !usr.canClick())
@@ -1413,11 +1413,11 @@
 	usr.setClickCooldown(20)
 
 	if(usr.stat > 0)
-		to_chat(usr, "You are unconcious and cannot do that!")
+		to_chat(usr, "Estas inconsciente y no puedes hacer eso!")
 		return
 
 	if(usr.restrained())
-		to_chat(usr, "You are restrained and cannot do that!")
+		to_chat(usr, "Estas esposado y no puedes hacer eso!")
 		return
 
 	var/mob/S = src
@@ -1437,9 +1437,9 @@
 		return
 
 	if(self)
-		to_chat(src, "<span class='warning'>You brace yourself to relocate your [current_limb.joint]...</span>")
+		to_chat(src, "<span class='warning'>Te preparas para recolocar tu [current_limb.joint]...</span>")
 	else
-		to_chat(U, "<span class='warning'>You begin to relocate [S]'s [current_limb.joint]...</span>")
+		to_chat(U, "<span class='warning'>Procedes a recolocar el [current_limb.joint] de [S]...</span>")
 	if(!do_after(U, 30, src))
 		return
 	if(!current_limb || !S || !U)
@@ -1481,8 +1481,8 @@
 	return 0
 
 /mob/living/carbon/human/verb/pull_punches()
-	set name = "Switch Stance"
-	set desc = "Try not to hurt them."
+	set name = "Cambiar de posicion"
+	set desc = "Trata de no hacerles mal."
 	set category = "IC"
 	species.toggle_stance(src)
 
@@ -1515,11 +1515,11 @@
 		return "0"
 	if(heart_organ.open && !method)
 		// Heart is a open type (?) and cannot be checked unless it's a machine
-		return "muddled and unclear; you can't seem to find a vein"
+		return "Confuso y no muy claro; parece que no puedes encontrar una vena muddled and unclear; you can't seem to find a vein"
 
 	var/bpm = get_pulse_as_number()
 	if(bpm >= PULSE_MAX_BPM)
-		return method ? ">[PULSE_MAX_BPM]" : "extremely weak and fast, patient's artery feels like a thread"
+		return method ? ">[PULSE_MAX_BPM]" : "Extremadamente debil y rapido, la arteria del paciente se siente como un hilo"
 
 	return "[method ? bpm : bpm + rand(-10, 10)]"
 // output for machines ^	 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ output for people
@@ -1536,17 +1536,17 @@
 	var/obj/item/organ/internal/stomach/stomach = internal_organs_by_name[BP_STOMACH]
 	if(!stomach || !stomach.is_usable())
 		if(!silent)
-			to_chat(src, SPAN_WARNING("Your stomach is not functional!"))
+			to_chat(src, SPAN_WARNING("Tu estomago no esta funcional!"))
 		return FALSE
 
 	if(!stomach.can_eat_atom(victim))
 		if(!silent)
-			to_chat(src, SPAN_WARNING("You are not capable of devouring \the [victim] whole!"))
+			to_chat(src, SPAN_WARNING("No eres capaz de devorar a [victim] de forma entera!"))
 		return FALSE
 
 	if(stomach.is_full(victim))
 		if(!silent)
-			to_chat(src, SPAN_WARNING("Your [stomach.name] is full!"))
+			to_chat(src, SPAN_WARNING("Tu [stomach.name] esta lleno!"))
 		return FALSE
 
 	. = stomach.get_devour_time(victim) || ..()
@@ -1601,8 +1601,8 @@
 	else
 		var/datum/gender/T = gender_datums[get_gender()]
 		visible_message( \
-			"<span class='notice'>[src] examines [T.self].</span>", \
-			"<span class='notice'>You check yourself for injuries.</span>" \
+			"<span class='notice'>[src] examina a [T.self].</span>", \
+			"<span class='notice'>Te revisas para asegurarte si estas herido.</span>" \
 			)
 
 		for(var/obj/item/organ/external/org in organs)
@@ -1614,36 +1614,36 @@
 
 			switch(brutedamage)
 				if(1 to 20)
-					status += "slightly sore"
+					status += "ligeramente dolorido"
 				if(20 to 40)
-					status += "very sore"
+					status += "muy doloroso"
 				if(40 to INFINITY)
-					status += "throbbing with agony"
+					status += "palpitante de agonia"
 
 			switch(burndamage)
 				if(1 to 10)
-					status += "tingling"
+					status += "hormigueo"
 				if(10 to 40)
-					status += "stinging"
+					status += "picadura"
 				if(40 to INFINITY)
-					status += "burning fiercely"
+					status += "ardiendo ferozmente"
 
 			if(org.is_stump())
-				status += "MISSING"
+				status += "PERDIDO"
 			if(org.status & ORGAN_MUTATED)
-				status += "misshapen"
+				status += "deforme"
 			if(org.dislocated == 2)
-				status += "dislocated"
+				status += "dislocado"
 			if(org.status & ORGAN_BROKEN)
-				status += "hurts when touched"
+				status += "duele cuando es tocadohurts when touched"
 			if(org.status & ORGAN_DEAD)
-				status += "is grey and necrotic"
+				status += "esta gris y necrotico"
 			if(!org.is_usable() || org.is_dislocated())
 				status += "dangling uselessly"
 			if(status.len)
-				src.show_message("My [org.name] is <span class='warning'>[english_list(status)].</span>",1)
+				src.show_message("Mi [org.name] es <span class='warning'>[english_list(status)].</span>",1)
 			else
-				src.show_message("My [org.name] is <span class='notice'>OK.</span>",1)
+				src.show_message("Mi [org.name] es <span class='notice'>OK.</span>",1)
 
 		if((MUTATION_SKELETON in mutations) && (!w_uniform) && (!wear_suit))
 			play_xylophone()
@@ -1660,9 +1660,9 @@
 			if(L)
 				active_breaths = L.active_breathing
 		if(!nervous_system_failure() && active_breaths)
-			visible_message("\The [src] jerks and gasps for breath!")
+			visible_message("\The [src] se retuerce y jadea por aire!")
 		else
-			visible_message("\The [src] twitches a bit as \his heart restarts!")
+			visible_message("\The [src] convulsiona un poco mientras su corazon vuelve a latir!")
 		shock_stage = min(shock_stage, 100) // 120 is the point at which the heart stops.
 		if(getOxyLoss() >= 75)
 			setOxyLoss(75)
