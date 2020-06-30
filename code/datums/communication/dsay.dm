@@ -36,7 +36,7 @@
 	if(!istype(communicator))
 		return FALSE
 	if(communicator.mob.stat != DEAD)
-		to_chat(communicator, "<span class='warning'>No estas suficientemente muerto para poder usar!</span>")
+		to_chat(communicator, "<span class='warning'>No estas suficientemente muerto para poderlo usar!</span>")
 		return FALSE
 	return DSAY_ASK_BASE
 

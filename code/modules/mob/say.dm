@@ -2,12 +2,12 @@
 	return
 
 /mob/verb/whisper()
-	set name = "Whisper"
+	set name = "Susurrar"
 	set category = "IC"
 	return
 
 /mob/verb/say_verb(message as text)
-	set name = "Say"
+	set name = "Decir"
 	set category = "IC"
 	remove_typing_indicator()
 	usr.say(message)
@@ -64,7 +64,7 @@
 		return speaking.get_spoken_verb(ending)
 
 	var/verb = pick(speak_emote)
-	if(verb == "says") //a little bit of a hack, but we can't let speak_emote default to an empty list without breaking other things
+	if(verb == "dice") //a little bit of a hack, but we can't let speak_emote default to an empty list without breaking other things
 		if(ending == "!")
 			verb = pick("exclama","grita","vocifera")
 		else if(ending == "?")
@@ -105,7 +105,7 @@
 /mob/proc/parse_language(var/message)
 	var/prefix = copytext(message,1,2)
 	if(length(message) >= 1 && prefix == get_prefix_key(/decl/prefix/audible_emote))
-		return all_languages["Noise"]
+		return all_languages["Ruido"]
 
 	if(length(message) >= 2 && is_language_prefix(prefix))
 		var/language_prefix = lowertext(copytext(message, 2 ,3))

@@ -209,7 +209,7 @@
 		if(istype(thing_in_slot, /obj/item/clothing))
 			var/obj/item/clothing/C = thing_in_slot
 			if(C.accessories.len)
-				dat += "<BR><A href='?src=\ref[src];item=tie;holder=\ref[C]'>Remove accessory</A>"
+				dat += "<BR><A href='?src=\ref[src];item=tie;holder=\ref[C]'>Quitar accesorio</A>"
 	dat += "<BR><HR>"
 
 	if(species.hud.has_hands)
@@ -219,14 +219,14 @@
 	// Do they get an option to set internals?
 	if(istype(wear_mask, /obj/item/clothing/mask) || istype(head, /obj/item/clothing/head/helmet/space))
 		if(istype(back, /obj/item/weapon/tank) || istype(belt, /obj/item/weapon/tank) || istype(s_store, /obj/item/weapon/tank))
-			dat += "<BR><A href='?src=\ref[src];item=internals'>Toggle internals.</A>"
+			dat += "<BR><A href='?src=\ref[src];item=internals'>Poner internals.</A>"
 
 	var/obj/item/clothing/under/suit = w_uniform
 	// Other incidentals.
 	if(istype(suit))
 		dat += "<BR><b>Pockets:</b> <A href='?src=\ref[src];item=pockets'>Empty or Place Item</A>"
 		if(suit.has_sensor == 1)
-			dat += "<BR><A href='?src=\ref[src];item=sensors'>Set sensors</A>"
+			dat += "<BR><A href='?src=\ref[src];item=sensors'>Poner sensores</A>"
 		if (suit.has_sensor && user.get_multitool())
 			dat += "<BR><A href='?src=\ref[src];item=lock_sensors'>[suit.has_sensor == SUIT_LOCKED_SENSORS ? "Unl" : "L"]ock sensors</A>"
 	if(handcuffed)
@@ -234,7 +234,7 @@
 
 	for(var/entry in worn_underwear)
 		var/obj/item/underwear/UW = entry
-		dat += "<BR><a href='?src=\ref[src];item=\ref[UW]'>Remove \the [UW]</a>"
+		dat += "<BR><a href='?src=\ref[src];item=\ref[UW]'>Quitar \the [UW]</a>"
 
 	dat += "<BR><A href='?src=\ref[src];refresh=1'>Refresh</A>"
 	dat += "<BR><A href='?src=\ref[user];mach_close=mob[name]'>Close</A>"
@@ -447,7 +447,7 @@
 
 			var/datum/computer_file/report/crew_record/R = get_crewmember_record(perpname)
 			if(R)
-				var/setcriminal = input(user, "Specify a new criminal status for this person.", "Security HUD", R.get_criminalStatus()) as null|anything in GLOB.security_statuses
+				var/setcriminal = input(user, "Especifica un nuevo estatus criminal para esta persona.", "Security HUD", R.get_criminalStatus()) as null|anything in GLOB.security_statuses
 				if(hasHUD(usr, HUD_SECURITY) && setcriminal)
 					R.set_criminalStatus(setcriminal)
 					modified = 1
@@ -462,7 +462,7 @@
 							U.handle_regular_hud_updates()
 
 			if(!modified)
-				to_chat(usr, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+				to_chat(usr, "<span class='warning'>Incapaz de localizar el nucleo de la entrada de la base de datos de esta persona.</span>")
 			return TOPIC_HANDLED
 
 	if (href_list["secrecord"])
@@ -478,13 +478,13 @@
 			var/datum/computer_file/report/crew_record/E = get_crewmember_record(perpname)
 			if(E)
 				if(hasHUD(user, HUD_SECURITY))
-					to_chat(user, "<b>Name:</b> [E.get_name()]")
-					to_chat(user, "<b>Criminal Status:</b> [E.get_criminalStatus()]")
-					to_chat(user, "<b>Details:</b> [E.get_secRecord()]")
+					to_chat(user, "<b>Nombre:</b> [E.get_name()]")
+					to_chat(user, "<b>Estatus Criminal:</b> [E.get_criminalStatus()]")
+					to_chat(user, "<b>Detalles:</b> [E.get_secRecord()]")
 					read = 1
 
 			if(!read)
-				to_chat(user, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+				to_chat(user, "<span class='warning'>Incapaz de localizar el nucleo de la entrada de la base de datos de esta persona.</span>")
 			return TOPIC_HANDLED
 
 	if (href_list["medical"])
@@ -500,7 +500,7 @@
 
 			var/datum/computer_file/report/crew_record/E = get_crewmember_record(perpname)
 			if(E)
-				var/setmedical = input(user, "Specify a new medical status for this person.", "Medical HUD", E.get_status()) as null|anything in GLOB.physical_statuses
+				var/setmedical = input(user, "Especifica una nuevo estatus medico para esta persona.", "Medical HUD", E.get_status()) as null|anything in GLOB.physical_statuses
 				if(hasHUD(user, HUD_MEDICAL) && setmedical)
 					E.set_status(setmedical)
 					modified = 1
@@ -514,7 +514,7 @@
 							U.handle_regular_hud_updates()
 
 			if(!modified)
-				to_chat(user, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+				to_chat(user, "<span class='warning'>Incapaz de localizar el nucleo de la entrada de la base de datos de esta persona.</span>")
 			return TOPIC_HANDLED
 
 	if (href_list["medrecord"])
@@ -531,14 +531,14 @@
 			var/datum/computer_file/report/crew_record/E = get_crewmember_record(perpname)
 			if(E)
 				if(hasHUD(user, HUD_MEDICAL))
-					to_chat(usr, "<b>Name:</b> [E.get_name()]")
-					to_chat(usr, "<b>Gender:</b> [E.get_sex()]")
-					to_chat(usr, "<b>Species:</b> [E.get_species()]")
-					to_chat(usr, "<b>Blood Type:</b> [E.get_bloodtype()]")
-					to_chat(usr, "<b>Details:</b> [E.get_medRecord()]")
+					to_chat(usr, "<b>Nombre:</b> [E.get_name()]")
+					to_chat(usr, "<b>Genero:</b> [E.get_sex()]")
+					to_chat(usr, "<b>Especies:</b> [E.get_species()]")
+					to_chat(usr, "<b>Tipo de sangre:</b> [E.get_bloodtype()]")
+					to_chat(usr, "<b>Detalles:</b> [E.get_medRecord()]")
 					read = 1
 			if(!read)
-				to_chat(user, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+				to_chat(user, "<span class='warning'>Incapaz de localizar la entrada de la base de datos de esta persona.</span>")
 			return TOPIC_HANDLED
 
 	return ..()
@@ -550,15 +550,15 @@
 			show_browser(src, null, "window=flavor_changes")
 			return
 		if("general")
-			msg = sanitize(input(src,"Update the general description of your character. This will be shown regardless of clothing. Do not include OOC information here.","Flavor Text",html_decode(flavor_texts[key])) as message, extra = 0)
+			msg = sanitize(input(src,"Actualiza la descripcion general de tu personaje. Esto aparece sin importar su ropa. No incluyas informacion OOC aqui.","Flavor Text",html_decode(flavor_texts[key])) as message, extra = 0)
 		if("NSFW/OOC")
-			msg = sanitize(input(src,"Update your NSFW/OOC description.", "Flavor Text",html_decode(flavor_texts[key])) as message, extra = 0)
+			msg = sanitize(input(src,"Actualiza tu descripcion NSFW/OOC.", "Flavor Text",html_decode(flavor_texts[key])) as message, extra = 0)
 		if("naked")
-			msg = sanitize(input(src,"Update your naked description. This text is NSFW, and will be shown when naked.", "Flavor Text",html_decode(flavor_texts[key])) as message, extra = 0)
+			msg = sanitize(input(src,"Actualiza tu descripcion al estar desnudo. Este texto es NSFW, y aparecera cuando estes desnudo.", "Flavor Text",html_decode(flavor_texts[key])) as message, extra = 0)
 		else
 			if(!(key in flavor_texts))
 				return
-			msg = sanitize(input(src,"Update the flavor text for your [key].","Flavor Text",html_decode(flavor_texts[key])) as message, extra = 0)
+			msg = sanitize(input(src,"Actualiza el flavor text por tu [key].","Flavor Text",html_decode(flavor_texts[key])) as message, extra = 0)
 	if(!CanInteract(src, GLOB.self_state))
 		return
 	flavor_texts[key] = msg
@@ -630,7 +630,7 @@
 	if(species.has_fine_manipulation(src))
 		return 1
 	if(!silent)
-		to_chat(src, "<span class='warning'>You don't have the dexterity to use that!</span>")
+		to_chat(src, "<span class='warning'>No tienes la destreza para usar eso!</span>")
 	return 0
 
 /mob/living/carbon/human/abiotic(var/full_body = TRUE)
@@ -650,7 +650,7 @@
 
 /mob/living/carbon/human/proc/play_xylophone()
 	if(!src.xylophone)
-		visible_message("<span class='warning'>\The [src] begins playing \his ribcage like a xylophone. It's quite spooky.</span>","<span class='notice'>You begin to play a spooky refrain on your ribcage.</span>","<span class='warning'>You hear a spooky xylophone melody.</span>")
+		visible_message("<span class='warning'>\The [src] empieza a jugar con tu caja toracica como si fuese un xilofono. Da un poco de miedo.</span>","<span class='notice'>Empiezas a tocar una melodia escalofriante en tu caja toracica.</span>","<span class='warning'>Escuchas una melodia escalofriante proveniente de un xilofono.</span>")
 		var/song = pick('sound/effects/xylophone1.ogg','sound/effects/xylophone2.ogg','sound/effects/xylophone3.ogg')
 		playsound(loc, song, 50, 1, -1)
 		xylophone = 1
@@ -685,7 +685,7 @@
 		nothing_to_puke = TRUE
 
 	if(nothing_to_puke)
-		custom_emote(1,"dry heaves.")
+		custom_emote(1,"Suelta arcadas.")
 		return
 
 	if(should_have_organ(BP_STOMACH))
@@ -700,7 +700,7 @@
 			if(species.gluttonous & GLUT_PROJECTILE_VOMIT)
 				M.throw_at(get_edge_target_turf(src,dir),7,7,src)
 
-	visible_message(SPAN_DANGER("\The [src] throws up!"),SPAN_DANGER("You throw up!"))
+	visible_message(SPAN_DANGER("\The [src] vomita!"),SPAN_DANGER("Vomitas!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	var/turf/location = loc
 	if(istype(location, /turf/simulated))
@@ -719,10 +719,10 @@
 
 	if(deliberate)
 		if(incapacitated())
-			to_chat(src, SPAN_WARNING("You cannot do that right now."))
+			to_chat(src, SPAN_WARNING("No puedes hacer eso ahora."))
 			return
 		var/datum/gender/G = gender_datums[gender]
-		visible_message(SPAN_DANGER("\The [src] starts sticking a finger down [G.his] own throat. It looks like [G.he] [G.is] trying to throw up!"))
+		visible_message(SPAN_DANGER("\The [src] empieza a meter un dedo en su [G.his] propia garganta. Parece que esta intentando [G.he] [G.is] vomitar!"))
 		if(!do_after(src, 30))
 			return
 		timevomit = max(timevomit, 5)
@@ -731,10 +731,10 @@
 	level = Clamp(level, 1, 3)
 
 	lastpuke = TRUE
-	to_chat(src, SPAN_WARNING("You feel nauseous..."))
+	to_chat(src, SPAN_WARNING("Sientes nauseas..."))
 	if(level > 1)
 		sleep(150 / timevomit)	//15 seconds until second warning
-		to_chat(src, SPAN_WARNING("You feel like you are about to throw up!"))
+		to_chat(src, SPAN_WARNING("Sientes que vas a vomitar!"))
 		if(level > 2)
 			sleep(100 / timevomit)	//and you have 10 more for mad dash to the bucket
 			empty_stomach()
@@ -754,26 +754,26 @@
 		src.verbs -= /mob/living/carbon/human/proc/morph
 		return
 
-	var/new_facial = input("Please select facial hair color.", "Character Generation",rgb(r_facial,g_facial,b_facial)) as color
+	var/new_facial = input("Por favor, selecciona el color del pelo facial.", "Generacion del personaje",rgb(r_facial,g_facial,b_facial)) as color
 	if(new_facial)
 		r_facial = hex2num(copytext(new_facial, 2, 4))
 		g_facial = hex2num(copytext(new_facial, 4, 6))
 		b_facial = hex2num(copytext(new_facial, 6, 8))
 
-	var/new_hair = input("Please select hair color.", "Character Generation",rgb(r_hair,g_hair,b_hair)) as color
+	var/new_hair = input("Por favor, selecciona el color de pelo.", "Generacion del personaje",rgb(r_hair,g_hair,b_hair)) as color
 	if(new_facial)
 		r_hair = hex2num(copytext(new_hair, 2, 4))
 		g_hair = hex2num(copytext(new_hair, 4, 6))
 		b_hair = hex2num(copytext(new_hair, 6, 8))
 
-	var/new_eyes = input("Please select eye color.", "Character Generation",rgb(r_eyes,g_eyes,b_eyes)) as color
+	var/new_eyes = input("Por favor, selecciona el color de ojos.", "Generacion del personaje",rgb(r_eyes,g_eyes,b_eyes)) as color
 	if(new_eyes)
 		r_eyes = hex2num(copytext(new_eyes, 2, 4))
 		g_eyes = hex2num(copytext(new_eyes, 4, 6))
 		b_eyes = hex2num(copytext(new_eyes, 6, 8))
 		update_eyes()
 
-	var/new_tone = input("Please select skin tone level: 1-220 (1=albino, 35=caucasian, 150=black, 220='very' black)", "Character Generation", "[35-s_tone]")  as text
+	var/new_tone = input("Por favor, selecciona un tono de piel: 1-220 (1=albino, 35=caucasico, 150=negro, 220='muy' negro)", "Generacion del personaje", "[35-s_tone]")  as text
 
 	if (!new_tone)
 		new_tone = 35
@@ -790,7 +790,7 @@
 		hairs.Add(H.name) // add hair name to hairs
 		qdel(H) // delete the hair after it's all done
 
-	var/new_style = input("Please select hair style", "Character Generation",h_style)  as null|anything in hairs
+	var/new_style = input("Por favor, elige un estilo de pelo", "Generacion del personaje",h_style)  as null|anything in hairs
 
 	// if new style selected (not cancel)
 	if (new_style)
@@ -805,26 +805,26 @@
 		fhairs.Add(H.name)
 		qdel(H)
 
-	new_style = input("Please select facial style", "Character Generation",f_style)  as null|anything in fhairs
+	new_style = input("Por favor, elige un estilo de pelo facial", "Generacion del personaje",f_style)  as null|anything in fhairs
 
 	if(new_style)
 		f_style = new_style
 
-	var/new_gender = alert(usr, "Please select gender.", "Character Generation", "Male", "Female", "Neutral")
+	var/new_gender = alert(usr, "Por favor, elige un genero.", "Generacion del personaje", "Hombre", "Mujer", "Neutro")
 	if (new_gender)
-		if(new_gender == "Male")
+		if(new_gender == "Hombre")
 			gender = MALE
-		else if(new_gender == "Female")
+		else if(new_gender == "Mujer")
 			gender = FEMALE
 		else
 			gender = NEUTER
 	regenerate_icons()
 	check_dna()
 
-	visible_message("<span class='notice'>\The [src] morphs and changes [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] appearance!</span>", "<span class='notice'>You change your appearance!</span>", "<span class='warning'>Oh, god!  What the hell was that?  It sounded like flesh getting squished and bone ground into a different shape!</span>")
+	visible_message("<span class='notice'>\The [src] se transforma y cambia [get_visible_gender() == MALE ? "su" : get_visible_gender() == FEMALE ? "su" : "su"] apariencia!</span>", "<span class='notice'>Has cambiado tu apariencia!</span>", "<span class='warning'>Oh, dios! Que demonios fue eso? Sonaba como carne fresca siendo aplastada y huesos moliendose en una forma diferente!</span>")
 
 /mob/living/carbon/human/proc/remotesay()
-	set name = "Project mind"
+	set name = "Proyectar mentalmente"
 	set category = "Superpower"
 
 	if(stat!=CONSCIOUS)
@@ -838,22 +838,22 @@
 	var/list/creatures = list()
 	for(var/mob/living/carbon/h in world)
 		creatures += h
-	var/mob/target = input("Who do you want to project your mind to?") as null|anything in creatures
+	var/mob/target = input("A quien quieres proyectar en tu mente?") as null|anything in creatures
 	if (isnull(target))
 		return
 
-	var/say = sanitize(input("What do you wish to say"))
+	var/say = sanitize(input("Que deseas decir?"))
 	if(mRemotetalk in target.mutations)
-		target.show_message("<span class='notice'>You hear [src.real_name]'s voice: [say]</span>")
+		target.show_message("<span class='notice'>Escuchas la voz de [src.real_name]: [say]</span>")
 	else
-		target.show_message("<span class='notice'>You hear a voice that seems to echo around the room: [say]</span>")
-	usr.show_message("<span class='notice'>You project your mind into [target.real_name]: [say]</span>")
-	log_say("[key_name(usr)] sent a telepathic message to [key_name(target)]: [say]")
+		target.show_message("<span class='notice'>Escuchas una voz retumbar como eco en la habitacion: [say]</span>")
+	usr.show_message("<span class='notice'>Proyectas en tu mente a [target.real_name]: [say]</span>")
+	log_say("[key_name(usr)] envia un mensaje de forma telepatica a [key_name(target)]: [say]")
 	for(var/mob/observer/ghost/G in world)
-		G.show_message("<i>Telepathic message from <b>[src]</b> to <b>[target]</b>: [say]</i>")
+		G.show_message("<i>Mensaje telepatico de <b>[src]</b> a <b>[target]</b>: [say]</i>")
 
 /mob/living/carbon/human/proc/remoteobserve()
-	set name = "Remote View"
+	set name = "Vista remota"
 	set category = "Superpower"
 
 	if(stat!=CONSCIOUS)
@@ -880,7 +880,7 @@
 			continue
 		creatures += h
 
-	var/mob/target = input ("Who do you want to project your mind to ?") as mob in creatures
+	var/mob/target = input ("A quien quieres proyectar en tu mente?") as mob in creatures
 
 	if (target)
 		remoteview_target = target
@@ -1000,7 +1000,7 @@
 			if((O.edge || O.sharp) && prob(5))
 				var/obj/item/organ/external/parent = get_organ(stomach.parent_organ)
 				if(prob(1) && can_feel_pain() && O.can_embed())
-					to_chat(src, SPAN_DANGER("You feel something rip out of your [stomach.name]!"))
+					to_chat(src, SPAN_DANGER("Sientes algo siendo arrancado de tu [stomach.name]!"))
 					O.dropInto(loc)
 					if(parent)
 						parent.embed(O)
@@ -1010,19 +1010,19 @@
 /mob/living/carbon/human/proc/jostle_internal_object(var/obj/item/organ/external/organ, var/obj/item/O)
 	// All kinds of embedded objects cause bleeding.
 	if(!organ.can_feel_pain())
-		to_chat(src, SPAN_DANGER("You feel [O] moving inside your [organ.name]."))
+		to_chat(src, SPAN_DANGER("Sientes [O] moviendose dentro de tu [organ.name]."))
 	else
 		var/msg = pick( \
-			SPAN_DANGER("A spike of pain jolts your [organ.name] as you bump [O] inside."), \
-			SPAN_DANGER("Your movement jostles [O] in your [organ.name] painfully."),       \
-			SPAN_DANGER("Your movement jostles [O] in your [organ.name] painfully."))
+			SPAN_DANGER("Sientes un dolor punzante en tu [organ.name] mientras [O] se retuerce dentro."), \
+			SPAN_DANGER("Tu movimiento empuja [O] en tu [organ.name] dolorosamente."),       \
+			SPAN_DANGER("Tu movimiento empuja [O] en tu [organ.name] dolorosamente."))
 		custom_pain(msg,40,affecting = organ)
 	organ.take_external_damage(rand(1,3) + O.w_class, DAM_EDGE, 0)
 
 /mob/living/carbon/human/proc/remove_splints()
 	set category = "Object"
-	set name = "Remove Splints"
-	set desc = "Carefully remove splints from someone's limbs."
+	set name = "Quitar Yesos"
+	set desc = "Con cuidado quitas el yeso de algunas extremidades."
 	set src in view(1)
 	var/mob/living/user = usr
 	var/removed_splint = 0
@@ -1033,23 +1033,23 @@
 		if (o && o.splinted)
 			var/obj/item/S = o.splinted
 			if(!istype(S) || S.loc != o) //can only remove splints that are actually worn on the organ (deals with hardsuit splints)
-				to_chat(user, "<span class='warning'>You cannot remove any splints on [src]'s [o.name] - [o.splinted] is supporting some of the breaks.</span>")
+				to_chat(user, "<span class='warning'>No puedes quitar ningun yeso de [src] en [o.name] - [o.splinted] esta soportando algunas roturas.</span>")
 			else
 				S.add_fingerprint(user)
 				if(o.remove_splint())
 					user.put_in_active_hand(S)
 					removed_splint = 1
 	if(removed_splint)
-		user.visible_message("<span class='danger'>\The [user] removes \the [src]'s splints!</span>")
+		user.visible_message("<span class='danger'>\The [user] quita el yeso de [src]'s splints!</span>")
 	else
-		to_chat(user, "<span class='warning'>\The [src] has no splints that can be removed.</span>")
+		to_chat(user, "<span class='warning'>\The [src] no tiene yeso para quitar.</span>")
 	verbs -= /mob/living/carbon/human/proc/remove_splints
 
 
 /mob/living/carbon/human/verb/check_pulse()
 	set category = "Object"
-	set name = "Check pulse"
-	set desc = "Approximately count somebody's pulse. Requires you to stand still at least 6 seconds."
+	set name = "Examinar pulso"
+	set desc = "Cuenta el pulso de alguien de forma aproximada. Requiere que este quiero por 6 segundos."
 	set src in view(1)
 	var/self = 0
 
@@ -1058,24 +1058,24 @@
 	if(usr == src)
 		self = 1
 	if(!self)
-		usr.visible_message("<span class='notice'>[usr] kneels down, puts \his hand on [src]'s wrist and begins counting their pulse.</span>",\
-		"You begin counting [src]'s pulse")
+		usr.visible_message("<span class='notice'>[usr] se arrodilla, y pone su mano en la muñeca de [src] y empieza a contar su pulso.</span>",\
+		"Empiezas a contar el pulso de [src]")
 	else
-		usr.visible_message("<span class='notice'>[usr] begins counting their pulse.</span>",\
-		"You begin counting your pulse.")
+		usr.visible_message("<span class='notice'>[usr] empieza a contar su pulso.</span>",\
+		"Empiezas a contar tu pulso.")
 
 	if(pulse())
-		to_chat(usr, "<span class='notice'>[self ? "You have a" : "[src] has a"] pulse! Counting...</span>")
+		to_chat(usr, "<span class='notice'>[self ? "Tienes" : "[src] tiene"] pulso! Contando...</span>")
 	else
-		to_chat(usr, "<span class='danger'>[src] has no pulse!</span>")//it is REALLY UNLIKELY that a dead person would check his own pulse
+		to_chat(usr, "<span class='danger'>[src] no tiene pulso!</span>")//it is REALLY UNLIKELY that a dead person would check his own pulse
 		return
 
-	to_chat(usr, "You must[self ? "" : " both"] remain still until counting is finished.")
+	to_chat(usr, "[self ? "Debes de mantenerte quieto" : "Ambos deben mantenerse quietos"] hasta que la comprobacion del pulso se termine.")
 	if(do_mob(usr, src, 60))
-		var/message = "<span class='notice'>[self ? "Your" : "[src]'s"] pulse is [src.get_pulse(GETPULSE_HAND)].</span>"
+		var/message = "<span class='notice'>[self ? "Tu pulso" : "El pulso de [src] "] es [src.get_pulse(GETPULSE_HAND)].</span>"
 		to_chat(usr, message)
 	else
-		to_chat(usr, "<span class='warning'>You failed to check the pulse. Try again.</span>")
+		to_chat(usr, "<span class='warning'>Has fallado en comprobar el pulso. Intentalo otra vez.</span>")
 
 /mob/living/carbon/human/proc/set_species(var/new_species, var/default_colour = 1)
 	if(!dna)
@@ -1249,8 +1249,8 @@
 
 /mob/living/carbon/human/proc/bloody_doodle()
 	set category = "IC"
-	set name = "Write in blood"
-	set desc = "Use blood on your hands to write a short message on the floor or a wall, murder mystery style."
+	set name = "Escribir en sangre"
+	set desc = "Usa la sangre de tus manos para escribir un breve mensaje en el suelo o en la pared, al estilo de un asesinato misterioso."
 
 	if (src.stat)
 		return
@@ -1262,31 +1262,31 @@
 		verbs -= /mob/living/carbon/human/proc/bloody_doodle
 
 	if (src.gloves)
-		to_chat(src, "<span class='warning'>Your [src.gloves] are getting in the way.</span>")
+		to_chat(src, "<span class='warning'>Tus [src.gloves] se interponen.</span>")
 		return
 
 	var/turf/simulated/T = src.loc
 	if (!istype(T)) //to prevent doodling out of mechs and lockers
-		to_chat(src, "<span class='warning'>You cannot reach the floor.</span>")
+		to_chat(src, "<span class='warning'>No puedes alcanzar el suelo.</span>")
 		return
 
-	var/direction = input(src,"Which way?","Tile selection") as anything in list("Here","North","South","East","West")
+	var/direction = input(src,"Por que camino?","Seleccion de azulejo") as anything in list("Aqui","Norte","Sur","Este","Oeste")
 	if (direction != "Here")
 		T = get_step(T,text2dir(direction))
 	if (!istype(T))
-		to_chat(src, "<span class='warning'>You cannot doodle there.</span>")
+		to_chat(src, "<span class='warning'>No puedes garabatear ahi.</span>")
 		return
 
 	var/num_doodles = 0
 	for (var/obj/effect/decal/cleanable/blood/writing/W in T)
 		num_doodles++
 	if (num_doodles > 4)
-		to_chat(src, "<span class='warning'>There is no space to write on!</span>")
+		to_chat(src, "<span class='warning'>No hay espacio para escribir en el!</span>")
 		return
 
 	var/max_length = bloody_hands * 30 //tweeter style
 
-	var/message = sanitize(input("Write a message. It cannot be longer than [max_length] characters.","Blood writing", ""))
+	var/message = sanitize(input("Escribe un mensaje. No puede ser mas largo que [max_length] caracteres.","Escribir con sangre", ""))
 
 	if (message)
 		var/used_blood_amount = round(length(message) / 30, 1)
@@ -1294,7 +1294,7 @@
 
 		if (length(message) > max_length)
 			message += "-"
-			to_chat(src, "<span class='warning'>You ran out of blood to write with!</span>")
+			to_chat(src, "<span class='warning'>Te has quedado sin sangre para escribir!</span>")
 		var/obj/effect/decal/cleanable/blood/writing/W = new(T)
 		W.basecolor = (hand_blood_color) ? hand_blood_color : COLOR_BLOOD_HUMAN
 		W.update_icon()
@@ -1307,11 +1307,11 @@
 	var/obj/item/organ/external/affecting = get_organ(target_zone)
 
 	if(!affecting)
-		to_chat(user, "<span class='warning'>They are missing that limb.</span>")
+		to_chat(user, "<span class='warning'>Les falta esa extremidad.</span>")
 		return 0
 
 	if(BP_IS_ROBOTIC(affecting))
-		to_chat(user, "<span class='warning'>That limb is robotic.</span>")
+		to_chat(user, "<span class='warning'>Esa extremidad es robotica.</span>")
 		return 0
 
 	. = CAN_INJECT
@@ -1320,7 +1320,7 @@
 			if(istype(C, /obj/item/clothing/suit/space))
 				. = INJECTION_PORT //it was going to block us, but it's a space suit so it doesn't because it has some kind of port
 			else
-				to_chat(user, "<span class='warning'>There is no exposed flesh or thin material on [src]'s [affecting.name] to inject into.</span>")
+				to_chat(user, "<span class='warning'>No hay piel expuesta o material fino en [src] de [affecting.name] para inyectar.</span>")
 				return 0
 
 
@@ -1403,7 +1403,7 @@
 
 /mob/living/carbon/human/proc/undislocate()
 	set category = "Object"
-	set name = "Undislocate Joint"
+	set name = "Reacomodar Articulacion"
 	set desc = "Vuelve a poner una articulacion a su sitio. Extremadamente doloroso."
 	set src in view(1)
 
