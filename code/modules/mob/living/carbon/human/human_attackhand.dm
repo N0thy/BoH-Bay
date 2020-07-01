@@ -26,7 +26,7 @@
 		if(H.hand)
 			temp = H.organs_by_name[BP_L_HAND]
 		if(!temp || !temp.is_usable())
-			to_chat(H, "<span class='warning'>You can't use your hand.</span>")
+			to_chat(H, "<span class='warning'>No puedes usar tu mano.</span>")
 			return
 
 	..()
@@ -42,7 +42,7 @@
 			var/damage = rand(0, 9)
 			if(!damage)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-				visible_message("<span class='danger'>\The [H] has attempted to punch \the [src]!</span>")
+				visible_message("<span class='danger'>\The [H] ha intentado golpear a [src]!</span>")
 				return 0
 			var/obj/item/organ/external/affecting = get_organ(ran_zone(H.zone_sel.selecting))
 
@@ -54,11 +54,11 @@
 			update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
 			H.update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
 
-			visible_message("<span class='danger'>[H] has punched \the [src]!</span>")
+			visible_message("<span class='danger'>[H] ha golpeado a [src]!</span>")
 
 			apply_damage(damage, PAIN, affecting)
 			if(damage >= 9)
-				visible_message("<span class='danger'>[H] has weakened \the [src]!</span>")
+				visible_message("<span class='danger'>[H] ha debilitado a [src]!</span>")
 				var/armor_block = 100 * get_blocked_ratio(affecting, BRUTE, damage = damage)
 				apply_effect(4, WEAKEN, armor_block)
 
@@ -81,14 +81,14 @@
 				var/cpr_delay = 15 * M.skill_delay_mult(SKILL_ANATOMY, 0.2)
 				cpr_time = 0
 
-				H.visible_message("<span class='notice'>\The [H] is trying to perform CPR on \the [src].</span>")
+				H.visible_message("<span class='notice'>[H] esta intentando realizar CPR en [src].</span>")
 
 				if(!do_after(H, cpr_delay, src))
 					cpr_time = 1
 					return
 				cpr_time = 1
 
-				H.visible_message("<span class='notice'>\The [H] performs CPR on \the [src]!</span>")
+				H.visible_message("<span class='notice'>[H] realiza CPR en [src]!</span>")
 
 				if(is_asystole())
 					if(prob(5 + 5 * (SKILL_EXPERT - pumping_skill)))
@@ -104,19 +104,19 @@
 						resuscitate()
 
 				if(!H.check_has_mouth())
-					to_chat(H, "<span class='warning'>You don't have a mouth, you cannot do mouth-to-mouth resuscitation!</span>")
+					to_chat(H, "<span class='warning'>No tienes boca, no puedes realizar una resucitacion boca a boca!</span>")
 					return
 				if(!check_has_mouth())
-					to_chat(H, "<span class='warning'>They don't have a mouth, you cannot do mouth-to-mouth resuscitation!</span>")
+					to_chat(H, "<span class='warning'>No tiene boca, no puedes realizar una resucitacion boca a boca!</span>")
 					return
 				if((H.head && (H.head.body_parts_covered & FACE)) || (H.wear_mask && (H.wear_mask.body_parts_covered & FACE)))
-					to_chat(H, "<span class='warning'>You need to remove your mouth covering for mouth-to-mouth resuscitation!</span>")
+					to_chat(H, "<span class='warning'>Necesitas mover lo que te cubre la boca para hacer una resucitacion boca a boca!</span>")
 					return 0
 				if((head && (head.body_parts_covered & FACE)) || (wear_mask && (wear_mask.body_parts_covered & FACE)))
-					to_chat(H, "<span class='warning'>You need to remove \the [src]'s mouth covering for mouth-to-mouth resuscitation!</span>")
+					to_chat(H, "<span class='warning'>Necesitas mover lo que le cubre la boca a [src] para hacer una resucitacion boca a boca!</span>")
 					return 0
 				if (!H.internal_organs_by_name[H.species.breathing_organ])
-					to_chat(H, "<span class='danger'>You need lungs for mouth-to-mouth resuscitation!</span>")
+					to_chat(H, "<span class='danger'>Necesitas pulmones para hacer una resucitacion boca a boca!</span>")
 					return
 				if(!need_breathe())
 					return
@@ -125,7 +125,7 @@
 					var/datum/gas_mixture/breath = H.get_breath_from_environment()
 					var/fail = L.handle_breath(breath, 1)
 					if(!fail)
-						to_chat(src, "<span class='notice'>You feel a breath of fresh air enter your lungs. It feels good.</span>")
+						to_chat(src, "<span class='notice'>Sientes una brisa de aire fresco entrar en tus pulmones. Se siente bien.</span>")
 
 			else if(!(M == src && apply_pressure(M, M.zone_sel.selecting)))
 				help_shake_act(M)
@@ -136,11 +136,11 @@
 
 		if(I_HURT)
 			if(H.incapacitated())
-				to_chat(H, "<span class='notice'>You can't attack while incapacitated.</span>")
+				to_chat(H, "<span class='notice'>No puedes atacar mientras estas incapacitado.</span>")
 				return
 
 			if(!istype(H))
-				attack_generic(H,rand(1,3),"punched")
+				attack_generic(H,rand(1,3),"perforado")
 				return
 
 			var/rand_damage = rand(1, 5)
@@ -154,13 +154,13 @@
 			if(!attack)
 				return 0
 			if(world.time < H.last_attack + attack.delay)
-				to_chat(H, "<span class='notice'>You can't attack again so soon.</span>")
+				to_chat(H, "<span class='notice'>No puedes atacar de nuevo tan pronto.</span>")
 				return 0
 			else
 				H.last_attack = world.time
 
 			if(!affecting || affecting.is_stump())
-				to_chat(M, "<span class='danger'>They are missing that limb!</span>")
+				to_chat(M, "<span class='danger'>Le falta esa extremidad!</span>")
 				return 1
 
 			switch(src.a_intent)
@@ -213,14 +213,14 @@
 					hit_zone = ran_zone(hit_zone)
 				if(prob(15) && hit_zone != BP_CHEST) // Missed!
 					if(!src.lying)
-						attack_message = "[H] attempted to strike [src], but missed!"
+						attack_message = "[H] intenta atacar a [src], pero falla!"
 					else
-						attack_message = "[H] attempted to strike [src], but \he rolled out of the way!"
+						attack_message = "[H] intenta atacar a [src], pero se quito del medio!"
 						src.set_dir(pick(GLOB.cardinal))
 					miss_type = 1
 
 			if(!miss_type && block)
-				attack_message = "[H] went for [src]'s [affecting.name] but was blocked!"
+				attack_message = "[H] fue por [src] de [affecting.name] pero estaba bloqueado!"
 				miss_type = 2
 
 			H.do_attack_animation(src)
@@ -230,7 +230,7 @@
 				H.visible_message("<span class='danger'>[attack_message]</span>")
 
 			playsound(loc, ((miss_type) ? (miss_type == 1 ? attack.miss_sound : 'sound/weapons/thudswoosh.ogg') : attack.attack_sound), 25, 1, -1)
-			admin_attack_log(H, src, "[miss_type ? (miss_type == 1 ? "Has missed" : "Was blocked by") : "Has [pick(attack.attack_verb)]"] their victim.", "[miss_type ? (miss_type == 1 ? "Missed" : "Blocked") : "[pick(attack.attack_verb)]"] their attacker", "[miss_type ? (miss_type == 1 ? "has missed" : "was blocked by") : "has [pick(attack.attack_verb)]"]")
+			admin_attack_log(H, src, "[miss_type ? (miss_type == 1 ? "Ha fallado" : "Estaba bloqueado por") : "Ha [pick(attack.attack_verb)]"] su victima.", "[miss_type ? (miss_type == 1 ? "Fallado" : "Bloqueado") : "[pick(attack.attack_verb)]"] su atacante.", "[miss_type ? (miss_type == 1 ? "ha fallado" : "ha sido bloqueado por") : "ha [pick(attack.attack_verb)]"]")
 
 			if(miss_type)
 				return 0
@@ -263,8 +263,8 @@
 
 	if(!damage || !istype(user))
 		return
-	admin_attack_log(user, src, "Attacked their victim", "Was attacked", "has [attack_message]")
-	src.visible_message("<span class='danger'>[user] has [attack_message] [src]!</span>")
+	admin_attack_log(user, src, "Ataca a su victima", "Ha sido atacado", "ha [attack_message]")
+	src.visible_message("<span class='danger'>[user] ha [attack_message] [src]!</span>")
 	user.do_attack_animation(src)
 
 	var/dam_zone = pick(organs_by_name)
@@ -343,9 +343,9 @@
 		var/datum/unarmed_attack/u_attack = thing
 		choices[u_attack.attack_name] = u_attack
 
-	var/selection = input("Select a default attack (currently selected: [default_attack ? default_attack.attack_name : "none"]).", "Default Unarmed Attack") as null|anything in choices
+	var/selection = input("Selecciona un ataque por defecto (currently selected: [default_attack ? default_attack.attack_name : "none"]).", "Default Unarmed Attack") as null|anything in choices
 	if(selection && !(choices[selection] in species.unarmed_attacks))
 		return
 
 	default_attack = selection ? choices[selection] : null
-	to_chat(src, SPAN_NOTICE("Your default unarmed attack is now <b>[default_attack ? default_attack.attack_name : "cleared"]</b>."))
+	to_chat(src, SPAN_NOTICE("El ataque desarmado que usaras por defecto es <b>[default_attack ? default_attack.attack_name : "limpiado"]</b>."))

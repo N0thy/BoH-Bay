@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(vote)
 		var/next_allowed_time = (last_started_time + config.vote_delay)
 		if(next_allowed_time > world.time)
 			return FALSE
-	
+
 	var/datum/vote/new_vote = new vote_type
 	if(!new_vote.setup(creator, automatic))
 		return FALSE
@@ -87,7 +87,7 @@ SUBSYSTEM_DEF(vote)
 	voting |= C
 
 	. = list()
-	. += "<html><head><title>Voting Panel</title></head><body>"
+	. += "<html><head><title>Panel de votacion</title></head><body>"
 	if(active_vote)
 		. += active_vote.interface(C.mob)
 		if(admin)
@@ -104,7 +104,7 @@ SUBSYSTEM_DEF(vote)
 			. += "</a>"
 			var/toggle = vote_datum.check_toggle()
 			if(admin && toggle)
-				. += "\t(<a href='?src=\ref[src];toggle=1;vote=\ref[vote_datum.type]'>toggle; currently [toggle]</a>)"
+				. += "\t(<a href='?src=\ref[src];toggle=1;vote=\ref[vote_datum.type]'>toggle; actualmente [toggle]</a>)"
 			. += "</li>"
 		. += "</ul><hr>"
 
@@ -165,10 +165,10 @@ SUBSYSTEM_DEF(vote)
 /datum/controller/subsystem/vote/proc/restart_world()
 	set waitfor = FALSE
 
-	to_world("World restarting due to vote...")
+	to_world("El mundo se reiniciara a causa de la votacion...")
 	SSstatistics.set_field_details("end_error","restart vote")
 	sleep(50)
-	log_game("Rebooting due to restart vote")
+	log_game("Reiniciando mundo debido al resultado del voto de reinicio")
 	world.Reboot()
 
 // Helper proc for determining whether addantag vote can be called.
@@ -190,6 +190,6 @@ SUBSYSTEM_DEF(vote)
 	set name = "Vote"
 
 	if(GAME_STATE < RUNLEVEL_LOBBY)
-		to_chat(src, "It's too soon to do any voting!")
+		to_chat(src, "Es demasiado pronto para hacer una votacion!")
 		return
 	SSvote.show_panel(src)
