@@ -1,5 +1,5 @@
 /datum/job/senior_doctor
-	title = "Physician"
+	title = "Medico"
 	department = "Medical"
 	department_flag = MED
 	minimal_player_age = 0
@@ -10,9 +10,9 @@
 	selection_color = "#013d3b"
 	economic_power = 8
 	alt_titles = list(
-		"Surgeon",
-		"Resident",
-		"Coroner"
+		"Cirujano",
+		"Residente",
+		"Forense"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/senior
 	allowed_branches = list(
@@ -45,7 +45,7 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/doctor
-	title = "Medical Technician"
+	title = "Tecnico medico"
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Physicians and the Chief Medical Officer"
@@ -53,9 +53,9 @@
 	minimum_character_age = list(SPECIES_HUMAN = 19)
 	minimal_player_age = 0
 	alt_titles = list(
-		"Paramedic",
+		"Paramedico",
 		"Corpsman",
-		"Nurse")
+		"Enfermero")
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/doctor
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
@@ -87,7 +87,7 @@
 	skill_points = 22
 
 /datum/job/medical_trainee
-	title = "Medical Trainee"
+	title = "Aprendiz de Medico"
 	department = "Medical"
 	department_flag = MED
 	total_positions = 1
@@ -96,9 +96,9 @@
 	selection_color = "#013d3b"
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	alt_titles = list(
-		"Trainee Medical Technician",
-		"Corpsman Trainee",
-		"Trainee Nurse")
+		"Aprendiz de Tecnico Medico",
+		"Aprendiz de Medico Militar",
+		"Aprendiz de Enfermero")
 
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/doctor
 	allowed_branches = list(
@@ -130,10 +130,10 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/medical_trainee/get_description_blurb()
-	return "You are a Trainee Medical Technician. You are learning how to treat and recover wounded crew from the more experienced medical personnel aboard. You are subordinate to the rest of the medical team."
+	return "Eres un aprendiz de Medico Tecnico. Estas aprendiendo como tratar y sanar a la tripulacion del personal medico mas experimentado Eres el subordinado del resto del equipo medico."
 
 /datum/job/chemist
-	title = "Laboratory Technician"
+	title = "Tecnico de Laboratorio"
 	department = "Medical"
 	department_flag = MED
 	total_positions = 1
@@ -159,7 +159,7 @@
 	minimal_access = list()
 
 /datum/job/chemist/get_description_blurb()
-	return "You are a Laboratory Technician. You make medicine, and work in the virology lab. You are not a doctor or medic, but have surface level knowledge in those fields. You should not be treating patients, but rather providing the the medicine to do so. You are subordinate to Physicians and Medical Techncians."
+	return "Eres un Tecnico de Laboratorio. Haces medicina y trabajas en el laboratorio de medicina. No eres un doctor o un medico, pero tienes conocimientos basicos en esos campos. No deberias de tratar pacientes si no, proporcionar la medicina necesaria para hacerlo. Si You are subordinate to Physicians and Medical Techncians."
 
 /datum/job/psychiatrist
 	title = "Counselor"
