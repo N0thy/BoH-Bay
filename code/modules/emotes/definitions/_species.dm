@@ -27,7 +27,10 @@
 		/decl/emote/human/qwag,
 		/decl/emote/human/fastsway,
 		/decl/emote/human/swag,
-		/decl/emote/human/stopsway
+		/decl/emote/human/stopsway,
+		/decl/emote/audible/hiss2,
+		/decl/emote/audible/hiss3,
+		/decl/emote/audible/hiss4
 		)
 
 /datum/species/nabber
@@ -58,7 +61,10 @@
 		/decl/emote/visible/ascent_glimmer,
 		/decl/emote/visible/ascent_pulse,
 		/decl/emote/visible/ascent_shine,
-		/decl/emote/visible/ascent_dazzle
+		/decl/emote/visible/ascent_dazzle,
+		/decl/emote/audible/hiss2,
+		/decl/emote/audible/hiss3,
+		/decl/emote/audible/hiss4
 	)
 
 /mob/living/carbon/human/set_species(var/new_species, var/default_colour = 1)

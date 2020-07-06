@@ -113,6 +113,10 @@
 	key = "laugh"
 	emote_message_3p_target = "USER laughs at TARGET."
 	emote_message_3p = "USER laughs."
+		if(ishuman(user))
+			var(/mob/living/carbon/human/H = user)
+		if(user.gender == FEMALE)
+			playsound(loc, ('sound/emotes_skyrat/manlaugh1.ogg','sound/emotes_skyrat/manlaugh2.ogg', 50, 1, -1
 
 /decl/emote/audible/mumble
 	key = "mumble"
@@ -230,3 +234,21 @@
 	emote_message_3p_target = "<span class='warning'>USER nalgea a TARGET!</span>"
 	emote_message_3p = "USER se nalgea a si mismo!"
 	emote_sound = 'sound/effects/snap.ogg'
+
+/decl/emote/audible/hiss2
+	key ="fhiss2"
+	emote_message_3p_target = "USER hisses softly at TARGET."
+	emote_message_3p = "USER hisses softly."
+	emote_sound = 'sound/emotes_skyrat/hiss1.ogg'
+
+/decl/emote/audible/hiss3
+	key ="fhiss3"
+	emote_message_3p_target = "USER hisses softly at TARGET."
+	emote_message_3p = "USER hisses softly."
+	emote_sound = 'sound/emotes_skyrat/hiss2.ogg'
+
+/decl/emote/audible/hiss4
+	key ="fhiss4"
+	emote_message_3p_target = "USER hisses softly at TARGET."
+	emote_message_3p = "USER hisses softly."
+	emote_sound = 'sound/emotes_skyrat/hiss3.ogg'
