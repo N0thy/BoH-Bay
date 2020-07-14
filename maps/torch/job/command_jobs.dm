@@ -1,6 +1,6 @@
 /datum/job/captain
-	title = "Commanding Officer"
-	supervisors = "Central Command and the Sol Code of Military Justice"
+	title = "Oficial Comandante"
+	supervisors = "Centro de Comando y el Codigo Sol de la Justicia Militar"
 	minimal_player_age = 14
 	economic_power = 15
 	minimum_character_age = list(SPECIES_HUMAN = 40,SPECIES_UNATHI = 40,SPECIES_SERGAL = 40, SPECIES_SKRELL = 40, SPECIES_PROMETHEAN = 40, SPECIES_YEOSA = 40, SPECIES_VULP = 40, SPECIES_VASS = 40, SPECIES_TAJ = 40, SPECIES_CUSTOM = 40, SPECIES_AKULA = 40)
@@ -26,7 +26,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/captain/get_description_blurb()
-	return "You are the Commanding Officer. You are the top dog. You are an experienced professional officer in control of an entire ship, and ultimately responsible for all that happens onboard. Your job is to make sure [GLOB.using_map.full_name] fulfils its space exploration mission. Delegate to your Executive Officer, your department heads, and your Senior Enlisted Advisor to effectively manage the ship, and listen to and trust their expertise."
+	return "Eres el Oficial Comandante, quien manda sobre todos. Eres un oficial profesional y experimentado en control de toda una nave, eres el responsable de todo lo que suceda abordo. Tu trabajo es asegurarte que [GLOB.using_map.full_name] cumpla su mision de exploracion. Delegado de tu Oficial Ejecutivo, tu departamento lidera,  your department heads, and your Senior Enlisted Advisor to effectively manage the ship, and listen to and trust their expertise."
 
 /datum/job/captain/post_equip_rank(var/mob/person, var/alt_title)
 	var/sound/announce_sound = (GAME_STATE <= RUNLEVEL_SETUP)? null : sound('sound/misc/boatswain.ogg', volume=20)
@@ -34,9 +34,9 @@
 	..()
 
 /datum/job/hop
-	title = "Executive Officer"
+	title = "Oficial Ejecutivo"
 	supervisors = "the Commanding Officer"
-	department = "Command"
+	department = "Comando"
 	department_flag = COM
 	minimal_player_age = 8
 	economic_power = 12
@@ -90,10 +90,10 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hop/get_description_blurb()
-	return "You are the Executive Officer. You are an experienced senior officer, second in command of the ship, and are responsible for the smooth operation of the ship under your Commanding Officer. In his absence, you are expected to take his place. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
+	return "Eres el Oficial Ejecutivo. Eres un experimental You are the Executive Officer. You are an experienced senior officer, second in command of the ship, and are responsible for the smooth operation of the ship under your Commanding Officer. In his absence, you are expected to take his place. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
 
 /datum/job/rd
-	title = "Chief Science Officer"
+	title = "Oficial Jefe de Ciencias"
 	supervisors = "the Commanding Officer"
 	economic_power = 20
 	minimal_player_age = 6
@@ -236,7 +236,7 @@
 	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the CO on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
 
 /datum/job/hos
-	title = "Chief of Security"
+	title = "Jefe de Seguridad"
 	supervisors = "the Commanding Officer and the Executive Officer"
 	economic_power = 8
 	minimal_player_age = 14

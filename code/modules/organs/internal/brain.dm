@@ -246,12 +246,12 @@
 	if(owner.stat)
 		return
 	if(damage > 0 && prob(1))
-		owner.custom_pain("Tu cabeza se siente entumecida y dolorida.",10)
+		owner.custom_pain("Sientes tu cabeza entumecida y adolorida.",10)
 	if(is_bruised() && prob(1) && owner.eye_blurry <= 0)
-		to_chat(owner, "<span class='warning'>Se esta haciendo dificil de ver por alguna razon.</span>")
+		to_chat(owner, "<span class='warning'>Se te esta dificultando la vision por alguna razon.</span>")
 		owner.eye_blurry = 10
 	if(damage >= 0.5*max_damage && prob(1) && owner.get_active_hand())
-		to_chat(owner, "<span class='danger'>Tu mano no respondera correctamente, y soltaras lo que estas tomando!</span>")
+		to_chat(owner, "<span class='danger'>Tu mano no responde correctamente, soltando lo que estas tomando!</span>")
 		owner.unequip_item()
 	if(damage >= 0.6*max_damage)
 		owner.slurring = max(owner.slurring, 2)
@@ -263,7 +263,7 @@
 /obj/item/organ/internal/brain/surgical_fix(mob/user)
 	var/blood_volume = owner.get_blood_oxygenation()
 	if(blood_volume < BLOOD_VOLUME_SURVIVE)
-		to_chat(user, "<span class='danger'>Partes del [src] no sobrevivieron al procedimiento debido a la falda del suministro de aire!</span>")
+		to_chat(user, "<span class='danger'>Partes del [src] no sobrevivieron al procedimiento debido a la falta del suministro de aire!</span>")
 		set_max_damage(Floor(max_damage - 0.25*damage))
 	heal_damage(damage)
 
