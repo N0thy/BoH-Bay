@@ -26,16 +26,16 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/captain/get_description_blurb()
-	return "Eres el Oficial Comandante, quien manda sobre todos. Eres un oficial profesional y experimentado en control de toda una nave, eres el responsable de todo lo que suceda abordo. Tu trabajo es asegurarte que [GLOB.using_map.full_name] cumpla su mision de exploracion. Delegado de tu Oficial Ejecutivo, tu departamento lidera,  your department heads, and your Senior Enlisted Advisor to effectively manage the ship, and listen to and trust their expertise."
+	return "Eres el Oficial Comandante, quien manda sobre todos. Eres un oficial profesional y experimentado en control de toda una nave, eres el responsable de todo lo que suceda abordo. Tu trabajo es asegurarte que [GLOB.using_map.full_name] cumpla su mision de exploracion. Seguido de tu Oficial Ejecutivo, los jefes de departamento, y tu asesor superior alistado para gestionar de forma eficaz la nave y aconsejarte."
 
 /datum/job/captain/post_equip_rank(var/mob/person, var/alt_title)
 	var/sound/announce_sound = (GAME_STATE <= RUNLEVEL_SETUP)? null : sound('sound/misc/boatswain.ogg', volume=20)
-	captain_announcement.Announce("All hands, [alt_title || title] [person.real_name] on deck!", new_sound = announce_sound)
+	captain_announcement.Announce("Todos espabilen, [alt_title || title] [person.real_name] ha llegado!", new_sound = announce_sound)
 	..()
 
 /datum/job/hop
 	title = "Oficial Ejecutivo"
-	supervisors = "the Commanding Officer"
+	supervisors = "el Oficial Comandante"
 	department = "Comando"
 	department_flag = COM
 	minimal_player_age = 8
@@ -90,7 +90,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hop/get_description_blurb()
-	return "Eres el Oficial Ejecutivo. Eres un experimental You are the Executive Officer. You are an experienced senior officer, second in command of the ship, and are responsible for the smooth operation of the ship under your Commanding Officer. In his absence, you are expected to take his place. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
+	return "Eres el Oficial Ejecutivo. Eres un Oficial superior con experiencia, el segundo en comandar sobre la nave y en ser responsable sobre el funcionamiento de la nave bajo tu oficial al mando. En su ausencia, puedes tomar su puesto. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
 
 /datum/job/rd
 	title = "Oficial Jefe de Ciencias"
@@ -237,7 +237,7 @@
 
 /datum/job/hos
 	title = "Jefe de Seguridad"
-	supervisors = "the Commanding Officer and the Executive Officer"
+	supervisors = "Oficial Comandante y Oficial Ejecutivo"
 	economic_power = 8
 	minimal_player_age = 14
 	minimum_character_age = list(SPECIES_HUMAN = 25,SPECIES_UNATHI = 25,SPECIES_SERGAL = 25, SPECIES_SKRELL = 25, SPECIES_PROMETHEAN = 25, SPECIES_YEOSA = 25, SPECIES_VASS = 25, SPECIES_TAJ = 25, SPECIES_CUSTOM = 25, SPECIES_AKULA = 25)
@@ -275,7 +275,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hos/get_description_blurb()
-	return "You are the Chief of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Chief and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the CO and the XO. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
+	return "Eres el Jefe de Seguridad. Manejas la nave de seguridad You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Chief and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the CO and the XO. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
 
 /datum/job/sea
 	title = "Senior Enlisted Advisor"
