@@ -167,7 +167,7 @@
 
 /decl/emote/visible/shrug
 	key = "shrug"
-	emote_message_3p = "USER levanta los hombros."
+	emote_message_3p = "USER se encoje de hombros."
 
 /decl/emote/visible/smile
 	key = "smile"

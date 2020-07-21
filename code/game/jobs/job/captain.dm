@@ -8,7 +8,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "oficiales de la compañia y Reguladores Corporativos"
+	supervisors = "oficiales de la compania y Reguladores Corporativos"
 	selection_color = "#1d1d4f"
 	req_admin_notify = 1
 	access = list() 			//See get_access()

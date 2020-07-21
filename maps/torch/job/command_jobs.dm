@@ -90,7 +90,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hop/get_description_blurb()
-	return "Eres el Oficial Ejecutivo. Eres un Oficial superior con experiencia, el segundo en comandar sobre la nave y en ser responsable sobre el funcionamiento de la nave bajo tu oficial al mando. En su ausencia, puedes tomar su puesto. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
+	return "Eres el Oficial Ejecutivo. Eres un Oficial superior con experiencia, el segundo en comandar y en ser responsable sobre el funcionamiento de la nave bajo tu oficial al mando. En su ausencia, puedes tomar su puesto. Tu deber principal es dirigir a los jefes de cada departamento y tambien los que no lo son. Tambien eres responsable de los contratistas y pasajeros que se encuentran abordo de la nave. Considera al Asesor Superior Alistado y a los Oficiales de Puente a tu disposicion."
 
 /datum/job/rd
 	title = "Oficial Jefe de Ciencias"
@@ -136,11 +136,11 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/rd/get_description_blurb()
-	return "You are the Chief Science Officer. You are responsible for the research department. You handle the science aspects of the project and liase with the corporate interests of the Expeditionary Corps Organisation. Make sure science gets done, do some yourself, and get your scientists on away missions to find things to benefit the project. Advise the CO on science matters."
+	return "Eres el Jefe de Ciencias. Eres el responsable del departamento de investigacion. Manejas los aspectos cientificos del proyecto y te vinculas con los intereses corporativos de la Organizacion del Cuerpo Expedicionario. Asegurate que la ciencia este hecha, hazlo tu mismo si es necesario, y manda a tus cientificos en misiones lejanas para encontrar cosas beneficiosas para el proyecto. Aconsejas al Oficial Comandante en asuntos de la ciencia."
 
 /datum/job/cmo
-	title = "Chief Medical Officer"
-	supervisors = "the Commanding Officer and the Executive Officer"
+	title = "Jefe de Medicina"
+	supervisors = "El Oficial Comandantethe Commanding Officer and the Executive Officer"
 	economic_power = 10
 	minimal_player_age = 6
 	minimum_character_age = list(SPECIES_HUMAN = 35,SPECIES_UNATHI = 35,SPECIES_SERGAL = 35, SPECIES_SKRELL = 35, SPECIES_PROMETHEAN = 35, SPECIES_YEOSA = 35, SPECIES_VASS = 35, SPECIES_TAJ = 35, SPECIES_CUSTOM = 35, SPECIES_AKULA = 35)
@@ -182,7 +182,7 @@
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
-	supervisors = "the Commanding Officer and the Executive Officer"
+	supervisors = "el Oficial Comandante y el Oficial Ejecutivo"
 	economic_power = 9
 	minimum_character_age = list(SPECIES_HUMAN = 27,SPECIES_UNATHI = 27,SPECIES_SERGAL = 27, SPECIES_SKRELL = 27, SPECIES_PROMETHEAN = 27, SPECIES_YEOSA = 27, SPECIES_VASS = 27, SPECIES_TAJ = 27, SPECIES_CUSTOM = 27, SPECIES_AKULA = 27)
 	minimal_player_age = 6
@@ -275,15 +275,15 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hos/get_description_blurb()
-	return "Eres el Jefe de Seguridad. Manejas la nave de seguridad You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Chief and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the CO and the XO. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
+	return "Eres el Jefe de Seguridad. Manejas la seguridad de la nave tanto como el Maestro de Armas y la Policia Militar, como el Guardian de Brig y el Tecnico Forense. Mantienes la nave a salvo. Te encargas de los asuntos de seguridad externos e internos. Eres la ley, sigues las ordenes del Oficial Comandante y el Oficial Ejecutivo. Se espera que tengas conocimiento del SCMJ, la ley solar y los procedimientos de cada alerta."
 
 /datum/job/sea
-	title = "Senior Enlisted Advisor"
-	department = "Support"
+	title = "Asesor Superior Alistado"
+	department = "Soporte"
 	department_flag = SPT
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Commanding Officer and the Executive Officer"
+	supervisors = "el Oficial Comandante y el Oficial Ejecutivo"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 6
 	economic_power = 8
@@ -320,15 +320,15 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/sea/get_description_blurb()
-	return "You are the Senior Enlisted Advisor. You are the highest enlisted person on the ship. You are directly subordinate to the CO. You advise them on enlisted concerns and provide expertise and advice to officers. You are responsible for ensuring discipline and good conduct among enlisted, as well as notifying officers of any issues and \"advising\" them on mistakes they make. You also handle various duties on behalf of the CO and XO. You are an experienced enlisted person, very likely equal only in experience to the CO and XO. You know the regulations better than anyone."
+	return "Eres el Asesor Superior Alistado. Eres la persona de mayor rango alistada en la nave. Sigues de forma directa las ordenes del Oficial Comandante.  You advise them on enlisted concerns and provide expertise and advice to officers. You are responsible for ensuring discipline and good conduct among enlisted, as well as notifying officers of any issues and \"advising\" them on mistakes they make. You also handle various duties on behalf of the CO and XO. You are an experienced enlisted person, very likely equal only in experience to the CO and XO. You know the regulations better than anyone."
 
 /datum/job/bridgeofficer
-	title = "Bridge Officer"
-	department = "Support"
+	title = "Oficial de Bridge"
+	department = "Soporte"
 	department_flag = SPT
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Commanding Officer and heads of staff"
+	supervisors = "el Oficial Comandante y los jefes del personal"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 0
 	economic_power = 7
@@ -367,5 +367,5 @@
 							 /datum/computer_file/program/deck_management)
 
 /datum/job/bridgeofficer/get_description_blurb()
-	return "You are a Bridge Officer. You are a very junior officer. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the CO and XO. You take the Dagon's helm and pilot the Byakhee if needed. You monitor bridge computer programs and communications and report relevant information to command."
+	return "Eres un Oficial de Puente. Eres un oficial de bajo rango, no das ordenes por cuentra propio. Sigues las ordenes de todo comando. Estas encargado de manejar los asuntos en el puente y informar directamente a tu OC y OE. Tomas el control de la dagon y piloteas la Byakhee si es necesario.  You monitor bridge computer programs and communications and report relevant information to command."
 

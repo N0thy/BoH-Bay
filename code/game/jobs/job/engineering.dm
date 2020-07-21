@@ -32,7 +32,7 @@
 
 	total_positions = 8
 	spawn_positions = 7
-	supervisors = "el jefe de ingenieros"
+	supervisors = "el jefe de ingenierias"
 	selection_color = "#5b4d20"
 	economic_power = 5
 	minimal_player_age = 7

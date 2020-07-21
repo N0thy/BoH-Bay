@@ -85,10 +85,10 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/officer
-	title = "Maestro Armero"
+	title = "Maestro de Armas"
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Chief of Security"
+	supervisors = "el Jefe de Seguridad"
 	economic_power = 4
 	minimal_player_age = 3
 	minimum_character_age = list(SPECIES_HUMAN = 18)

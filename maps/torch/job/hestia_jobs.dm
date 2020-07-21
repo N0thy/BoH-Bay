@@ -176,7 +176,7 @@
 
 /datum/job/psiadvisor
 	title = "Psionic Advisor"
-	department = "Support"
+	department = "Soporte"
 	department_flag = SPT
 	selection_color = "#2f2f7f"
 	total_positions = 1
@@ -224,7 +224,7 @@
 
 /datum/job/adjudicator
 	title = "Adjudicator"
-	department = "Support"
+	department = "Soporte"
 	department_flag = SPT
 	total_positions = 1
 	spawn_positions = 1
@@ -251,7 +251,7 @@
 
 /datum/job/bailiff
 	title = "Bailiff"
-	department = "Support"
+	department = "Soporte"
 	department_flag = SPT
 	total_positions = 1
 	spawn_positions = 1
