@@ -367,5 +367,5 @@
 							 /datum/computer_file/program/deck_management)
 
 /datum/job/bridgeofficer/get_description_blurb()
-	return "Eres un Oficial de Puente. Eres un oficial de bajo rango, no das ordenes por cuentra propio. Sigues las ordenes de todo comando. Estas encargado de manejar los asuntos en el puente y informar directamente a tu OC y OE. Tomas el control de la dagon y piloteas la Byakhee si es necesario.  You monitor bridge computer programs and communications and report relevant information to command."
+	return "Eres un Oficial de Puente. Eres un oficial de bajo rango, no das ordenes por cuentra propio. Sigues las ordenes de todo comando. Estas encargado de manejar los asuntos en el puente y informar directamente a tu OC y OE. Tomas el control de la dagon y piloteas la Byakhee si es necesario. You monitor bridge computer programs and communications and report relevant information to command."
 
