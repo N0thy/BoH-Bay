@@ -136,9 +136,10 @@
 	title = "Tecnico de Laboratorio"
 	department = "Medicina"
 	department_flag = MED
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "Jefe de Medicina, the Corporate Liaison y Personal Medico"
+
 	selection_color = "#013d3b"
 	economic_power = 4
 	minimum_character_age = list(SPECIES_HUMAN = 25)
