@@ -368,7 +368,7 @@
 	if(!has_job_whitelist(caller, src)) //This is fine.
 		reasons["No estas whitelisteado para este trabajo."] = TRUE
 	if(is_semi_antagonist && jobban_isbanned(caller, MODE_MISC_AGITATOR))
-		reasons["Tu estas baneado de semi-antagonista."] = TRUE
+		reasons["Estas baneado de semi-antagonista."] = TRUE
 	if(!player_old_enough(caller))
 		reasons["La edad de tu personaje es muy baja."] = TRUE
 	if(!is_position_available())

@@ -133,10 +133,9 @@
 		to_chat(src, SPAN_WARNING("You can't toggle the healing at this time!"))
 		return
 	aura.toggle()
-	if (aura.innate_heal)
+	if 	to_chat(src, "<span class='alium'>You are no longer using nutrients to regenerate.</span>")
+	else(aura.innate_heal)
 		to_chat(src, "<span class='alium'>You are now using nutrients to regenerate.</span>")
-	else
-		to_chat(src, "<span class='alium'>You are no longer using nutrients to regenerate.</span>")
 
 /mob/living/carbon/human/proc/change_colour()
 	set category = "Abilities"

@@ -328,7 +328,7 @@
 	pixel_x = -21
 	},
 /obj/machinery/photocopier/faxmachine{
-	department = "Science"
+	department = "Ciencias"
 	},
 /obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/carpet/orange,
@@ -4042,7 +4042,7 @@
 	tag = "icon-corner_white (NORTHWEST)"
 	},
 /obj/machinery/photocopier/faxmachine{
-	department = "Science"
+	department = "Ciencias"
 	},
 /obj/effect/floor_decal/corner/research{
 	dir = 6;
@@ -24754,7 +24754,7 @@
 "jJb" = (
 /obj/machinery/requests_console{
 	announcementConsole = 1;
-	department = "Science";
+	department = "Ciencias";
 	departmentType = 2;
 	name = "Science Requests Console";
 	pixel_x = -30

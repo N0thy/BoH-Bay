@@ -139,8 +139,8 @@
 	return "Eres el Jefe de Ciencias. Eres el responsable del departamento de investigacion. Manejas los aspectos cientificos del proyecto y te vinculas con los intereses corporativos de la Organizacion del Cuerpo Expedicionario. Asegurate que la ciencia este hecha, hazlo tu mismo si es necesario, y manda a tus cientificos en misiones lejanas para encontrar cosas beneficiosas para el proyecto. Aconsejas al Oficial Comandante en asuntos de la ciencia."
 
 /datum/job/cmo
-	title = "Jefe de Medicina"
-	supervisors = "El Oficial Comandantethe Commanding Officer and the Executive Officer"
+	title = "Oficial Medico en Jefe"
+	supervisors = "El Oficial Comandante y el Oficial Ejecutivo"
 	economic_power = 10
 	minimal_player_age = 6
 	minimum_character_age = list(SPECIES_HUMAN = 35,SPECIES_UNATHI = 35,SPECIES_SERGAL = 35, SPECIES_SKRELL = 35, SPECIES_PROMETHEAN = 35, SPECIES_YEOSA = 35, SPECIES_VASS = 35, SPECIES_TAJ = 35, SPECIES_CUSTOM = 35, SPECIES_AKULA = 35)
@@ -178,10 +178,10 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/cmo/get_description_blurb()
-	return "You are the Chief Medical Officer. You manage the medical department. You ensure all members of medical are skilled, tasked and handling their duties. Ensure your doctors are staffing your infirmary and your corpsman/paramedics are ready for response. Act as a second surgeon or backup pharmacist in the absence of either. You are expected to know medical very well, along with general regulations."
+	return "Eres el Oficial Medico en Jefe. Manejas el departamento de medicina. Te aseguras de que todos los miembros del personal medico esten capacitados y haciendo sus obligaciones. Asegurate que tus doctores esten trabajando en la enfermeria y que tu medico o paramedico este listo para responder a cualquier llamada de auxilio. Actua como un segundo cirujano o un farmaceutico de repuesto en caso de que esten ausentes. Se espera que tengas un buen conocimiento medico junto con las normas generales."
 
 /datum/job/chief_engineer
-	title = "Chief Engineer"
+	title = "Oficial Ingeniero en Jefe"
 	supervisors = "el Oficial Comandante y el Oficial Ejecutivo"
 	economic_power = 9
 	minimum_character_age = list(SPECIES_HUMAN = 27,SPECIES_UNATHI = 27,SPECIES_SERGAL = 27, SPECIES_SKRELL = 27, SPECIES_PROMETHEAN = 27, SPECIES_YEOSA = 27, SPECIES_VASS = 27, SPECIES_TAJ = 27, SPECIES_CUSTOM = 27, SPECIES_AKULA = 27)
@@ -233,7 +233,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/chief_engineer/get_description_blurb()
-	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the CO on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
+	return "Eres el Oficial Ingeniero en Jefe. Manejas el departamento de ingenieria. Eres responsable del Ingeniero Senior quien es tu mano izquierda y (deberia ser) un habilidoso y experimentado ingeniero. Maneja tus ingenieros, asegura que el buque se mantenga con energia, que las brechas esten reparadas y los problemas resueltos. Aconseja al OC en asuntos de Ingenieria. Tambien eres responsable de mantenimiento y control de cualquiere buque sintetico. Eres un Ingeniero experimentado con una gran de conocimientos teoricos. Deberias de conocer las regulaciones de los buques en un nivel razonable."
 
 /datum/job/hos
 	title = "Jefe de Seguridad"
@@ -367,5 +367,5 @@
 							 /datum/computer_file/program/deck_management)
 
 /datum/job/bridgeofficer/get_description_blurb()
-	return "Eres un Oficial de Puente. Eres un oficial de bajo rango, no das ordenes por cuentra propio. Sigues las ordenes de todo comando. Estas encargado de manejar los asuntos en el puente y informar directamente a tu OC y OE. Tomas el control de la dagon y piloteas la Byakhee si es necesario. You monitor bridge computer programs and communications and report relevant information to command."
+	return "Eres un Oficial de Puente. Eres un oficial de bajo rango, no das ordenes por cuenta propia. Sigues las ordenes de todo comando. Estas encargado de manejar los asuntos en el puente y informar directamente a tu OC y OE. Tomas el control de la dagon y piloteas la Byakhee si es necesario, monitorizas comunicaciones y programas digitales de bridge, y reportas informacion importante a comando."
 

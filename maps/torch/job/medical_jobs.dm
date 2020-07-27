@@ -6,7 +6,7 @@
 	minimum_character_age = list(SPECIES_HUMAN = 29)
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "El Jefe de Medicina"
+	supervisors = "El Oficial Medico en Jefe"
 	selection_color = "#013d3b"
 	economic_power = 8
 	alt_titles = list(
@@ -48,7 +48,7 @@
 	title = "Tecnico Medico"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "Medicos y el Jefe de Medicina"
+	supervisors = "Medicos y el Oficial Medico en Jefe"
 	economic_power = 7
 	minimum_character_age = list(SPECIES_HUMAN = 19)
 	minimal_player_age = 0
@@ -138,7 +138,7 @@
 	department_flag = MED
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Jefe de Medicina, the Corporate Liaison y Personal Medico"
+	supervisors = "Oficial Medico en Jefe, the Corporate Liaison y Personal Medico"
 
 	selection_color = "#013d3b"
 	economic_power = 4
@@ -169,7 +169,7 @@
 	economic_power = 5
 	minimum_character_age = list(SPECIES_HUMAN = 24)
 	minimal_player_age = 0
-	supervisors = "Jefe de Medicina"
+	supervisors = "Oficial Medico en Jefe"
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/counselor
 
 	allowed_branches = list(
@@ -202,7 +202,7 @@
 	)
 
 /datum/job/psychiatrist/get_description_blurb()
-	return "Eres el Psiquiatra. Tu responsabilidad principal es la salud mental y bienestar de la tripulacion. Sigues las ordenes del Jefe de medicina. A parte del Asesor Psiconico, eres el unico miembro abordo con habilidades Psiconicas."
+	return "Eres el Psiquiatra. Tu responsabilidad principal es la salud mental y bienestar de la tripulacion. Sigues las ordenes del Oficial Medico en Jefe. A parte del Asesor Psiconico, eres el unico miembro abordo con habilidades Psiconicas."
 
 /datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
 	psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
