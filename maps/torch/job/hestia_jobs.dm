@@ -246,7 +246,7 @@
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
 /datum/job/adjudicator/get_description_blurb()
-	return "You are the Adjudicator. Your job is to be an unbiased defender of the law, dealing with any ethical or legal issues aboard the ship and informing and advising the Commanding Officer of them. Ensure that the ship regulations are upheld and that the security force is enforcing the law correctly."
+	return "Eres el Adjudicador. Tu trabajo es You are the Adjudicator. Your job is to be an unbiased defender of the law, dealing with any ethical or legal issues aboard the ship and informing and advising the Commanding Officer of them. Ensure that the ship regulations are upheld and that the security force is enforcing the law correctly."
 
 
 /datum/job/blueshield
@@ -284,12 +284,12 @@
 
 
 /datum/job/lawyer
-	title = "Lawyer"
+	title = "Abogado"
 	department = "Servicio"
 	department_flag = SRV
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Adjudicator, The Galilei Convention and the Ship Regulations"
+	supervisors = "el Adujicador, Convencion de Galilei y las Regulaciones de la Nave/Navales"
 	economic_power = 10
 	minimal_player_age = 2
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/lawyer
@@ -305,4 +305,4 @@
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
 /datum/job/lawyer/get_description_blurb()
-	return "You are a lawyer. Your job is to prosecute or defend your client depending on the circumstances."
+	return "Eres un Abogado. tu trabajo es procesar o defender a tu cliente dependiendo de las circunstancias."
