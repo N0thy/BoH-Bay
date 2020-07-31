@@ -54,7 +54,7 @@
 			update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
 			H.update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
 
-			visible_message("<span class='danger'>[H] ha golpeado a [src]!</span>")
+			visible_message("<span class='danger'>[H] ha golpeado a [src.name]!</span>")
 
 			apply_damage(damage, PAIN, affecting)
 			if(damage >= 9)
@@ -88,7 +88,7 @@
 					return
 				cpr_time = 1
 
-				H.visible_message("<span class='notice'>[H] realiza CPR en [src]!</span>")
+				H.visible_message("<span class='notice'>[H] realiza CPR en [src.name]!</span>")
 
 				if(is_asystole())
 					if(prob(5 + 5 * (SKILL_EXPERT - pumping_skill)))
