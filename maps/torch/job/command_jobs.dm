@@ -320,7 +320,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/sea/get_description_blurb()
-	return "Eres el Asesor Superior Alistado. Eres la persona de mayor rango alistada en la nave. Sigues de forma directa las ordenes del Oficial Comandante.  You advise them on enlisted concerns and provide expertise and advice to officers. You are responsible for ensuring discipline and good conduct among enlisted, as well as notifying officers of any issues and \"advising\" them on mistakes they make. You also handle various duties on behalf of the CO and XO. You are an experienced enlisted person, very likely equal only in experience to the CO and XO. You know the regulations better than anyone."
+	return "Eres el Asesor Superior Alistado. Eres la persona de mayor rango alistada en la nave. Sigues de forma directa las ordenes del Oficial Comandante. Les aconsejas sobre las preocupaciones de los alistados, proporcionas experiencia y asesoramiento a los oficiales. Eres responsable de asegurar la disciplina y buena conducta entre los reclutas, asi como de avisar a los oficiales de cualquiera problema y \"asesorarles\" sobre los errores que pueden cometer. Tambien te encargas de varias tareas en nombre del OC y OE. Eres alguien experienciado y conoces las regulaciones mejor que nadie."
 
 /datum/job/bridgeofficer
 	title = "Oficial de Bridge"

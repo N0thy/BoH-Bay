@@ -8253,7 +8253,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/requests_console{
 	announcementConsole = 1;
-	department = "Security";
+	department = "Seguridad";
 	departmentType = 5;
 	pixel_y = 30
 	},

@@ -15683,7 +15683,7 @@
 /obj/machinery/light,
 /obj/machinery/requests_console{
 	announcementConsole = 1;
-	department = "Security";
+	department = "Seguridad";
 	departmentType = 5;
 	pixel_x = 0;
 	pixel_y = -32
