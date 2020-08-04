@@ -82,7 +82,7 @@
 	return "<span class='warning'>NO eres seguridad. Ignorar esto puede conllevar a un Jobban o algo peor...</span> - Eres el Lider de Escuadron. Tu trabajo es organizar y liderar un reducido grupo de infanteria para apoyar al Jefe de Exploradores. Comandas a los Marines en tu Escuadron. Te aseguras que la expedicion tenga las armas de fuego que necesite. Una vez en la mision, tu deber sera asegurarte de que lo peor no se pueda hacer realidad."
 
 /datum/job/combat_tech
-	title = "Tecnico en Combate"
+	title = "Tecnico de Combate"
 	department = "el Lider de Escuadron"
 	department = "Infanteria"
 	department_flag = INF
@@ -136,7 +136,7 @@
 	total_positions = 4
 	spawn_positions = 4
 	minimal_player_age = 6
-	supervisors = "el Tecnico en Combate y el Lider de Escuadron"
+	supervisors = "el Tecnico de Combate y el Lider de Escuadron"
 	selection_color = "#557e38"
 	skill_points = 18
 	minimum_character_age = list(SPECIES_HUMAN = 18)
@@ -219,20 +219,20 @@
 	Secondly, you're to assist the crew or Research on psionic matters, or guide any newly emergent crew that awaken with psionic abilities."
 
 /*
-	Adjudicator
+	Magistrado
 */
 
-/datum/job/adjudicator
-	title = "Adjudicador"
+/datum/job/magistrado
+	title = "Magistrado"
 	department = "Soporte"
 	department_flag = SPT
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Central Command The Galilei Convention and the Ship Regulations"
+	supervisors = "Comando Central, Convencion de Galilei y las Regulaciones de la Nave/Navales"
 	selection_color = "#2f2f7f"
 	economic_power = 15
 	minimal_player_age = 7
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/adjudicator
+	outfit_type = /decl/hierarchy/outfit/job/torch/crew/magistrado
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERT,
@@ -240,14 +240,12 @@
 	skill_points = 20
 	minimum_character_age = list(SPECIES_HUMAN = 28)
 
-	access = list(access_adjudicator, access_lawyer, access_sec_doors, access_brig, access_maint_tunnels, access_medical,
+	access = list(access_magistrado, access_lawyer, access_sec_doors, access_brig, access_maint_tunnels, access_medical,
 			            access_bridge, access_cargo, access_solgov_crew, access_hangar)
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
-/datum/job/adjudicator/get_description_blurb()
-	return "Eres el Adjudicador. Tu trabajo es You are the Adjudicator. Your job is to be an unbiased defender of the law, dealing with any ethical or legal issues aboard the ship and informing and advising the Commanding Officer of them. Ensure that the ship regulations are upheld and that the security force is enforcing the law correctly."
-
+/datum/job/magistrado/get_description_blurb()
 
 /datum/job/blueshield
 	title = "Blueshield"
@@ -275,7 +273,7 @@
 	                    SKILL_FORENSICS   = SKILL_MAX)
 
 	skill_points = 25
-	access = list(access_adjudicator, access_lawyer, access_sec_doors, access_brig, access_maint_tunnels, access_medical,
+	access = list(access_magistrado, access_lawyer, access_sec_doors, access_brig, access_maint_tunnels, access_medical,
 			            access_bridge, access_cargo, access_solgov_crew, access_hangar, access_bs)
 	defer_roundstart_spawn = TRUE
 
