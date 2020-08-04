@@ -23,7 +23,7 @@
 	minimal_access = list()
 
 /datum/job/janitor
-	title = "Tecnico de Higiene"
+	title = "Técnico de Higiene"
 	department = "Servicio"
 	department_flag = SRV
 	total_positions = 2

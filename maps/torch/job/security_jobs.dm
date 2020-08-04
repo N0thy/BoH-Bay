@@ -37,7 +37,7 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/detective
-	title = "Tecnico Forense"
+	title = "Técnico Forense"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Oficial Maestro de Seguridad en Jefe"

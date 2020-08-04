@@ -278,7 +278,7 @@
 				++unknown
 		if(unknown)
 			print_reagent_default_message = FALSE
-			. += "<span class='scan_warning'>Reactivo no medico[(unknown > 1)?"s":""] encontrado en el estomago del sujeto.</span>"
+			. += "<span class='scan_warning'>Reactivo no médico[(unknown > 1)?"s":""] encontrado en el estomago del sujeto.</span>"
 
 	if(H.chem_doses.len)
 		var/list/chemtraces = list()

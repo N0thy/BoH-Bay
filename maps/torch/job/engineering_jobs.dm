@@ -57,13 +57,13 @@
 	minimal_player_age = 0
 	minimum_character_age = list(SPECIES_HUMAN = 24)
 	alt_titles = list(
-		"Tecnico de motor",
-		"Tecnico en Control de Averias",
+		"Técnico de motor",
+		"Técnico en Control de Averias",
 		"Electricista",
-		"Tecnico en Atmosfera",
-		"Tecnico en AEV",
-		"Tecnico en Telecomunicaciones",
-		"Tecnico en Soporte vital"
+		"Técnico en Atmosfera",
+		"Técnico en AEV",
+		"Técnico en Telecomunicaciones",
+		"Técnico en Soporte vital"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer
 	allowed_branches = list(
@@ -173,8 +173,8 @@
 	selection_color = "#5b4d20"
 	economic_power = 6
 	alt_titles = list(
-		"Tecnico de Mechas",
-		"Tecnico Biomecanico"
+		"Técnico de Mechas",
+		"Técnico Biomecanico"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticist
 	allowed_branches = list(/datum/mil_branch/civilian)

@@ -35,7 +35,7 @@
 	path = /obj/item/weapon/storage/firstaid/surgery
 
 /datum/uplink_item/item/medical/combat
-	name = "Kit de combate medico"
+	name = "Kit de combate médico"
 	desc = "Contiene muchas de las medicinas que necesitas para recuperarte de heridas y enfermedades, todo en una forma conveniente de pastilla. Esta incluido el yeso para huesos rotos!"
 	item_cost = 16
 	path = /obj/item/weapon/storage/firstaid/combat

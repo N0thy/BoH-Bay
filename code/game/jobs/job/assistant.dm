@@ -9,7 +9,7 @@
 	economic_power = 1
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
-	alt_titles = list("Tecnico Asistente","Interno Medico","Asistente Investigativo","Visitante")
+	alt_titles = list("Técnico Asistente","Interno Médico","Asistente Investigativo","Visitante")
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
 /datum/job/assistant/get_access()

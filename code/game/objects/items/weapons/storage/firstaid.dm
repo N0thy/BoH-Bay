@@ -9,7 +9,7 @@
  */
 /obj/item/weapon/storage/firstaid
 	name = "botiquin de primeros auxilios"
-	desc = "Es un botiquin medico de emergencia para esos abucheos graves."
+	desc = "Es un botiquin médico de emergencia para esos abucheos graves."
 	icon_state = "firstaid"
 	throw_speed = 2
 	throw_range = 8
@@ -36,7 +36,7 @@
 
 /obj/item/weapon/storage/firstaid/trauma
 	name = "botiquin para traumas"
-	desc = "Es un botiquin medico de emergencia para cuando las personas traen armas balisticas a una pelea con laser."
+	desc = "Es un botiquin médico de emergencia para cuando las personas traen armas balisticas a una pelea con laser."
 	icon_state = "trauma"
 	item_state = "trauma"
 
@@ -46,7 +46,7 @@
 
 /obj/item/weapon/storage/firstaid/fire
 	name = "botiquin para quemaduras"
-	desc = "Es un botiquin medico de emergencia para los que les encanta jugar con laser."
+	desc = "Es un botiquin médico de emergencia para los que les encanta jugar con laser."
 	icon_state = "ointment"
 	item_state = "ointment"
 
@@ -157,7 +157,7 @@
 
 /obj/item/weapon/storage/firstaid/rad
 	name = "botiquin anti-radiacion"
-	desc = "Es un botiquin medico de emergencia para cuando las personas ignoran a la IA sobre la radiacion."
+	desc = "Es un botiquin médico de emergencia para cuando las personas ignoran a la IA sobre la radiacion."
 	icon_state = "radaid"
 	item_state = "radaid"
 

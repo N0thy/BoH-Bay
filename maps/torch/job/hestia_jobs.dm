@@ -82,7 +82,7 @@
 	return "<span class='warning'>NO eres seguridad. Ignorar esto puede conllevar a un Jobban o algo peor...</span> - Eres el Lider de Escuadron. Tu trabajo es organizar y liderar un reducido grupo de infanteria para apoyar al Jefe de Exploradores. Comandas a los Marines en tu Escuadron. Te aseguras que la expedicion tenga las armas de fuego que necesite. Una vez en la mision, tu deber sera asegurarte de que lo peor no se pueda hacer realidad."
 
 /datum/job/combat_tech
-	title = "Tecnico de Combate"
+	title = "Técnico de Combate"
 	department = "el Lider de Escuadron"
 	department = "Infanteria"
 	department_flag = INF
@@ -117,7 +117,7 @@
 			            access_inftech, access_aquila, access_eva)
 	alt_titles = list(
 		"Ingeniero de Combate",
-		"Medico de Combate")
+		"Médico de Combate")
 
 /datum/job/combat_tech/is_position_available()
 	if(..())
@@ -127,7 +127,7 @@
 	return FALSE
 
 /datum/job/combat_tech/get_description_blurb()
-	return "<span class='warning'>NO eres seguridad. Ignorar esto puede conllevar a un Jobban o algo peor...</span> - Eres el unico Tecnico de Combate en el escuadron. Tu trabajo es proveer tanto tu asistencia militar como demoliciones tacticas, en caso de ser necesarias. Puedes asumir el mando si no hay un Lider de Escuadron presente."
+	return "<span class='warning'>NO eres seguridad. Ignorar esto puede conllevar a un Jobban o algo peor...</span> - Eres el unico Técnico de Combate en el escuadron. Tu trabajo es proveer tanto tu asistencia militar como demoliciones tacticas, en caso de ser necesarias. Puedes asumir el mando si no hay un Lider de Escuadron presente."
 
 /datum/job/grunt
 	title = "Rifleman"
@@ -136,7 +136,7 @@
 	total_positions = 4
 	spawn_positions = 4
 	minimal_player_age = 6
-	supervisors = "el Tecnico de Combate y el Lider de Escuadron"
+	supervisors = "el Técnico de Combate y el Lider de Escuadron"
 	selection_color = "#557e38"
 	skill_points = 18
 	minimum_character_age = list(SPECIES_HUMAN = 18)
@@ -172,10 +172,10 @@
 	return FALSE
 
 /datum/job/grunt/get_description_blurb()
-	return "<span class='warning'>NO eres seguridad. Ignorar esto puede conllevar a un Jobban o algo peor...</span> - Eres un Marine! Tu deber es escuchar al Lider de Escuadron. Si no esta presente, el Tecnico de Combate puede mandar. Recibe las ordenes y haz lo mejor que puedas para no morir!. Oorah!"
+	return "<span class='warning'>NO eres seguridad. Ignorar esto puede conllevar a un Jobban o algo peor...</span> - Eres un Marine! Tu deber es escuchar al Lider de Escuadron. Si no esta presente, el Técnico de Combate puede mandar. Recibe las ordenes y haz lo mejor que puedas para no morir!. Oorah!"
 
 /datum/job/psiadvisor
-	title = "Asesor Psionico"
+	title = "Asesor Psiónico"
 	department = "Soporte"
 	department_flag = SPT
 	selection_color = "#2f2f7f"
@@ -207,7 +207,7 @@
 	)
 
 	alt_titles = list(
-		"Operativo Psionico de Nanotrasen" = /decl/hierarchy/outfit/job/torch/crew/command/psiadvisor/nt,
+		"Operativo Psiónico de Nanotrasen" = /decl/hierarchy/outfit/job/torch/crew/command/psiadvisor/nt,
 		"Agente de la Fundacion")
 
 /datum/job/psiadvisor/equip(var/mob/living/carbon/human/H)
@@ -215,7 +215,7 @@
 	return ..()
 
 /datum/job/psiadvisor/get_description_blurb()
-	return "Eres el Asesor Psionico, un agente de la Fundacion o del Cuerpo Psionico de Nanotrasen. Junto con el Psiquiatra, you're the only other individual with known and authorized Psionic abilities aboard the NTSS Dagon. Your main responsibility is advising the Commanding Officer on psionic matters. \
+	return "Eres el Asesor Psiónico, un agente de la Fundacion o del Cuerpo Psiónico de Nanotrasen. Junto con el Psiquiatra, you're the only other individual with known and authorized Psionic abilities aboard the NTSS Dagon. Your main responsibility is advising the Commanding Officer on psionic matters. \
 	Secondly, you're to assist the crew or Research on psionic matters, or guide any newly emergent crew that awaken with psionic abilities."
 
 /*

@@ -39,10 +39,10 @@
 	skill_points = 20
 
 /datum/job/scientist
-	title = "Cientifico"
+	title = "Científico"
 	total_positions = 6
 	spawn_positions = 6
-	supervisors = "el Oficial Cientifico en Jefe y el Workplace Liaison"
+	supervisors = "el Oficial Científico en Jefe y el Workplace Liaison"
 	economic_power = 10
 	minimum_character_age = list(SPECIES_HUMAN = 25)
 	minimal_player_age = 0

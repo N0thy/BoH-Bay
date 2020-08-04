@@ -12,7 +12,7 @@
 	pda_type = /obj/item/modular_computer/pda/cargo
 
 /decl/hierarchy/outfit/job/cargo/cargo_tech
-	name = OUTFIT_JOB_NAME("Tecnico de cargo")
+	name = OUTFIT_JOB_NAME("Técnico de cargo")
 	uniform = /obj/item/clothing/under/rank/cargotech
 	id_type = /obj/item/weapon/card/id/cargo
 	pda_type = /obj/item/modular_computer/pda/cargo

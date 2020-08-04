@@ -52,7 +52,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/cargo/qm
 
 /datum/job/cargo_tech
-	title = "Tecnico de Cargo"
+	title = "Técnico de Cargo"
 	department = "Suministro"
 	department_flag = SUP
 	total_positions = 2
@@ -72,7 +72,7 @@
 	economic_power = 5
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
 	minimal_access = list(access_mining, access_mining_station, access_mailsorting)
-	alt_titles = list("Tecnico de Taladro","Prospector")
+	alt_titles = list("Operador de Perforadora","Prospector")
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
 
 /datum/job/janitor
@@ -84,7 +84,7 @@
 	supervisors = "el jefe de personal"
 	access = list(access_janitor, access_maint_tunnels, access_engine, access_research, access_sec_doors, access_medical)
 	minimal_access = list(access_janitor, access_maint_tunnels, access_engine, access_research, access_sec_doors, access_medical)
-	alt_titles = list("Custodio","Tecnico Sanitario","Maid")
+	alt_titles = list("Custodio","Técnico Sanitario","Maid")
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
 //More or less assistants

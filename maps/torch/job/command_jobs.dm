@@ -93,7 +93,7 @@
 	return "Eres el Oficial Ejecutivo. Eres un Oficial superior con experiencia, el segundo en comandar y en ser responsable sobre el funcionamiento de la nave bajo tu oficial al mando. En su ausencia, puedes tomar su puesto. Tu deber principal es dirigir a los jefes de cada departamento y tambien los que no lo son. Tambien eres responsable de los contratistas y pasajeros que se encuentran abordo de la nave. Considera al Asesor Superior Alistado y a los Oficiales de Puente a tu disposicion."
 
 /datum/job/rd
-	title = "Oficial Cientifico en Jefe"
+	title = "Oficial Científico en Jefe"
 	supervisors = "the Commanding Officer"
 	economic_power = 20
 	minimal_player_age = 6
@@ -139,7 +139,7 @@
 	return "Eres el Jefe de Ciencias. Eres el responsable del departamento de investigacion. Manejas los aspectos cientificos del proyecto y te vinculas con los intereses corporativos de la Organizacion del Cuerpo Expedicionario. Asegurate que la ciencia este hecha, hazlo tu mismo si es necesario, y manda a tus cientificos en misiones lejanas para encontrar cosas beneficiosas para el proyecto. Aconsejas al Oficial Comandante en asuntos de la ciencia."
 
 /datum/job/cmo
-	title = "Oficial Medico en Jefe"
+	title = "Oficial Médico en Jefe"
 	supervisors = "El Oficial Comandante y el Oficial Ejecutivo"
 	economic_power = 10
 	minimal_player_age = 6
@@ -178,7 +178,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/cmo/get_description_blurb()
-	return "Eres el Oficial Medico en Jefe. Manejas el departamento de medicina. Te aseguras de que todos los miembros del personal medico esten capacitados y haciendo sus obligaciones. Asegurate que tus doctores esten trabajando en la enfermeria y que tu medico o paramedico este listo para responder a cualquier llamada de auxilio. Actua como un segundo cirujano o un farmaceutico de repuesto en caso de que esten ausentes. Se espera que tengas un buen conocimiento medico junto con las normas generales."
+	return "Eres el Oficial Médico en Jefe. Manejas el departamento de medicina. Te aseguras de que todos los miembros del personal médico esten capacitados y haciendo sus obligaciones. Asegurate que tus doctores esten trabajando en la enfermeria y que tu médico o paramedico este listo para responder a cualquier llamada de auxilio. Actua como un segundo cirujano o un farmaceutico de repuesto en caso de que esten ausentes. Se espera que tengas un buen conocimiento médico junto con las normas generales."
 
 /datum/job/chief_engineer
 	title = "Oficial Ingeniero en Jefe"
@@ -275,7 +275,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hos/get_description_blurb()
-	return "Eres el Oficial Maestro de Seguridad en Jefe. Manejas la seguridad de la nave tanto como el Maestro de Armas y la Policia Militar, como el Guardian de Brig y el Tecnico Forense. Mantienes la nave a salvo. Te encargas de los asuntos de seguridad externos e internos. Eres la ley, sigues las ordenes del Oficial Comandante y el Oficial Ejecutivo. Se espera que tengas conocimiento del SCMJ, la ley solar y los procedimientos de cada alerta."
+	return "Eres el Oficial Maestro de Seguridad en Jefe. Manejas la seguridad de la nave tanto como el Maestro de Armas y la Policia Militar, como el Guardian de Brig y el Técnico Forense. Mantienes la nave a salvo. Te encargas de los asuntos de seguridad externos e internos. Eres la ley, sigues las ordenes del Oficial Comandante y el Oficial Ejecutivo. Se espera que tengas conocimiento del SCMJ, la ley solar y los procedimientos de cada alerta."
 
 /datum/job/sea
 	title = "Asesor Superior Alistado"

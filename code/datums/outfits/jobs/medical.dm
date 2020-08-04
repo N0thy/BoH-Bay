@@ -10,7 +10,7 @@
 	BACKPACK_OVERRIDE_MEDICAL
 
 /decl/hierarchy/outfit/job/medical/cmo
-	name = OUTFIT_JOB_NAME("Oficial Medico en Jefe")
+	name = OUTFIT_JOB_NAME("Oficial Médico en Jefe")
 	l_ear  =/obj/item/device/radio/headset/heads/cmo
 	uniform = /obj/item/clothing/under/rank/chief_medical_officer
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/cmo
@@ -21,7 +21,7 @@
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
 
 /decl/hierarchy/outfit/job/medical/doctor
-	name = OUTFIT_JOB_NAME("Medico")
+	name = OUTFIT_JOB_NAME("Médico")
 	uniform = /obj/item/clothing/under/rank/medical
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	l_hand = /obj/item/weapon/storage/firstaid/adv
@@ -29,7 +29,7 @@
 	id_type = /obj/item/weapon/card/id/medical
 
 /decl/hierarchy/outfit/job/medical/doctor/emergency_physician
-	name = OUTFIT_JOB_NAME("Medico de emergencia")
+	name = OUTFIT_JOB_NAME("Médico de emergencia")
 	suit = /obj/item/clothing/suit/storage/toggle/fr_jacket
 
 /decl/hierarchy/outfit/job/medical/doctor/surgeon
@@ -104,5 +104,5 @@
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/medical/paramedic/emt
-	name = OUTFIT_JOB_NAME("Tecnico medico de emergencia")
+	name = OUTFIT_JOB_NAME("Técnico médico de emergencia")
 	uniform = /obj/item/clothing/under/rank/medical/paramedic

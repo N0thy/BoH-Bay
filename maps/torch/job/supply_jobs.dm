@@ -38,7 +38,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/cargo_tech
-	title = "Tecnico de Cargo"
+	title = "Técnico de Cargo"
 	department = "Suministro"
 	department_flag = SUP
 	total_positions = 3
@@ -83,9 +83,9 @@
 	economic_power = 7
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	alt_titles = list(
-		"Tecnico del Taladr",
+		"Técnico del Taladr",
 		"Minero",
-		"Tecnico de Salvamiento")
+		"Técnico de Salvamiento")
 	min_skill = list(   SKILL_HAULING = SKILL_ADEPT,
 	                    SKILL_EVA     = SKILL_BASIC,
 	                    SKILL_PILOT   = SKILL_BASIC)

@@ -59,8 +59,8 @@
 	overlay_status_display = "status_display_violet"
 	security_level_lightmode = "violet"
 
-	up_description = "Una emergencia medica mayor se ha desarrollado. Personal medico se debe reportar con su supervisor para recibir ordenes, personal no medico son requeridos de obedecer toda instruccion relevante de los empleados de medicina."
-	down_description = "Procedimientos de codigo violeta estan en efecto; Personal medico se debe reportar con su supervisor para ordenes, personal no medico son requeridos de obedecer instrucciones relevantes de los empleados de medicina."
+	up_description = "Una emergencia medica mayor se ha desarrollado. Personal médico se debe reportar con su supervisor para recibir ordenes, personal no médico son requeridos de obedecer toda instruccion relevante de los empleados de medicina."
+	down_description = "Procedimientos de codigo violeta estan en efecto; Personal médico se debe reportar con su supervisor para ordenes, personal no médico son requeridos de obedecer instrucciones relevantes de los empleados de medicina."
 
 /decl/security_level/default/torchdept/code_orange
 	name = "Codigo naranja"

@@ -50,7 +50,7 @@
 	spawn_positions = 2
 	supervisors = "el head de seguridad"
 	selection_color = "#601c1c"
-	alt_titles = list("Tecnico forense" = /decl/hierarchy/outfit/job/security/detective/forensic)
+	alt_titles = list("Técnico forense" = /decl/hierarchy/outfit/job/security/detective/forensic)
 	economic_power = 5
 	access = list(access_security, access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels, access_eva)
 	minimal_access = list(access_security, access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels, access_eva)

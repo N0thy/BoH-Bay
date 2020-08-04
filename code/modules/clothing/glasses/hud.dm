@@ -40,7 +40,7 @@
 
 /obj/item/clothing/glasses/hud/health/sun
 	name = "Gafas de sol medicas"
-	desc = "Un HUD medico integrado a unas gafas de sol comunes."
+	desc = "Un HUD médico integrado a unas gafas de sol comunes."
 	icon_state = "sunhudmed"
 	item_state = "sunhudmed"
 	flash_protection = FLASH_PROTECTION_MINOR

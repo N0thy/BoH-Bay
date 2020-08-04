@@ -44,10 +44,10 @@
 	containername = "caja de suministros de limpieza"
 
 /decl/hierarchy/supply_pack/custodial/bodybag
-	name = "Equipamiento - Bolsas para cadaveres"
+	name = "Equipamiento - Bolsas para cadáveres"
 	contains = list(/obj/item/weapon/storage/box/bodybags = 3)
 	cost = 10
-	containername = "caja de bolsas para cadaveres"
+	containername = "caja de bolsas para cadáveres"
 
 /decl/hierarchy/supply_pack/custodial/janitorbiosuits
 	name = "Gear - Equipamiento de riesgo biologico para el conserje"

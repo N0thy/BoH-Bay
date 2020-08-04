@@ -46,7 +46,7 @@
 	path = /obj/item/device/camera_film
 
 /datum/gear/accessory/stethoscope
-	display_name = "estetoscopio (medico)"
+	display_name = "estetoscopio (médico)"
 	path = /obj/item/clothing/accessory/stethoscope
 	cost = 2
 

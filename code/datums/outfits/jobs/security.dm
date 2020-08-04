@@ -42,7 +42,7 @@
 	backpack_overrides.Cut()
 
 /decl/hierarchy/outfit/job/security/detective/forensic
-	name = OUTFIT_JOB_NAME("Tecnico Forense")
+	name = OUTFIT_JOB_NAME("Técnico Forense")
 	head = null
 	suit = /obj/item/clothing/suit/storage/forensics/blue
 

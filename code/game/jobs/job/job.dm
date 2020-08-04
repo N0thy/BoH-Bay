@@ -101,7 +101,7 @@
 			if(affected)
 				affected.implants += imp
 				imp.part = affected
-			to_chat(H, SPAN_DANGER("Como un psionico registrado, usted esta equipado con un implante de control de amortiguacion psionica. Usar el poder psionico mientras el implante esta activado resultara en shocks neuronales y en tu violacion siendo reportada."))
+			to_chat(H, SPAN_DANGER("Como un psiónico registrado, usted esta equipado con un implante de control de amortiguacion psionica. Usar el poder psiónico mientras el implante esta activado resultara en shocks neuronales y en tu violacion siendo reportada."))
 
 	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title, branch, grade)
 	if(outfit) . = outfit.equip(H, title, alt_title)

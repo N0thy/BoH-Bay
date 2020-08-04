@@ -38,6 +38,6 @@
 	minimal_player_age = 7
 	access = list(access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels, access_external_airlocks, access_construction, access_atmospherics, access_emergency_storage)
 	minimal_access = list(access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels, access_external_airlocks, access_construction, access_atmospherics, access_emergency_storage)
-	alt_titles = list("Tecnico de Mantenimiento","Tecnico de Motor","Electricista",
-		"Tecnico Atmosferico" = /decl/hierarchy/outfit/job/engineering/atmos)
+	alt_titles = list("Técnico de Mantenimiento","Técnico de Motor","Electricista",
+		"Técnico Atmosferico" = /decl/hierarchy/outfit/job/engineering/atmos)
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer

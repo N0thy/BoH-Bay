@@ -34,7 +34,7 @@
 	suit = /obj/item/clothing/suit/space/void/engineering
 
 /decl/hierarchy/outfit/job/engineering/atmos
-	name = OUTFIT_JOB_NAME("Tecnico Atmosferico")
+	name = OUTFIT_JOB_NAME("Técnico Atmosferico")
 	uniform = /obj/item/clothing/under/rank/atmospheric_technician
 	belt = /obj/item/weapon/storage/belt/utility/atmostech
 	pda_type = /obj/item/modular_computer/pda/engineering

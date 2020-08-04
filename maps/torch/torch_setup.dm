@@ -8,7 +8,7 @@
 	. += "Felicidades por tu nuevo empleo abordo del NTSS (NanoTrasen Solarian Ship) Dagon."
 	. += "Es un buque de clase epsilon equipado con instalaciones medicas, de investigacion y seguridad de ultima generacion para todas tus necesidades, capaz tanto de responder como lidiar con la mayoria de las amenazas menores de manera rapida y eficiente, tanto como para tambien explorar algunos de los planetas olvidados de estos sectores"
 	. += ""
-	. += "Es un buque cientifico renovado para estar mas cerca de una fragata militar"
+	. += "Es un buque científico renovado para estar mas cerca de una fragata militar"
 	. += "Capaz de responder tanto para lidiar con la mayoria de las amenazas insurrealistas menores de manera rapida como para explorar cualquier planeta 'olvidado' en estos sectores."
 	return jointext(., "<br>")
 

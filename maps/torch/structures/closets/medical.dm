@@ -26,7 +26,7 @@
 	closet_appearance = /decl/closet_appearance/secure_closet/torch/medical
 
 /obj/structure/closet/secure_closet/CMO_torch
-	name = "armario del oficial medico"
+	name = "armario del oficial médico"
 	req_access = list(access_cmo)
 	closet_appearance = /decl/closet_appearance/secure_closet/torch/medical/cmo
 
@@ -59,7 +59,7 @@
 	)
 
 /obj/structure/closet/secure_closet/medical_torchsenior
-	name = "armario de medico"
+	name = "armario de médico"
 	req_access = list(access_senmed)
 	closet_appearance = /decl/closet_appearance/secure_closet/torch/medical/physician
 
@@ -85,7 +85,7 @@
 	)
 
 /obj/structure/closet/secure_closet/medical_torch
-	name = "armario de tecnico medico"
+	name = "armario de Técnico médico"
 	req_access = list(access_medical_equip)
 	closet_appearance = /decl/closet_appearance/secure_closet/torch/medical
 

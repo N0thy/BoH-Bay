@@ -53,11 +53,11 @@
 	cost = 2
 
 /datum/gear/eyes/medical
-	display_name = "HUD Medico"
+	display_name = "HUD Médico"
 	path = /obj/item/clothing/glasses/hud/health
 
 /datum/gear/eyes/medical/prescription
-	display_name = "HUD Medico de prescripcion"
+	display_name = "HUD Médico de prescripcion"
 	path = /obj/item/clothing/glasses/hud/health/prescription
 
 /datum/gear/eyes/medical/visor
@@ -71,7 +71,7 @@
 	cost = 2
 
 /datum/gear/eyes/medical/ipatch
-	display_name = "HUDpatch Medico"
+	display_name = "HUDpatch Médico"
 	path = /obj/item/clothing/glasses/eyepatch/hud/medical
 	cost = 2
 

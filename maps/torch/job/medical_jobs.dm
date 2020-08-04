@@ -1,12 +1,12 @@
 /datum/job/senior_doctor
-	title = "Medico"
+	title = "Médico"
 	department = "Medicina"
 	department_flag = MED
 	minimal_player_age = 0
 	minimum_character_age = list(SPECIES_HUMAN = 29)
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "El Oficial Medico en Jefe"
+	supervisors = "El Oficial Médico en Jefe"
 	selection_color = "#013d3b"
 	economic_power = 8
 	alt_titles = list(
@@ -45,10 +45,10 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/doctor
-	title = "Tecnico Medico"
+	title = "Técnico Médico"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "Medicos y el Oficial Medico en Jefe"
+	supervisors = "Medicos y el Oficial Médico en Jefe"
 	economic_power = 7
 	minimum_character_age = list(SPECIES_HUMAN = 19)
 	minimal_player_age = 0
@@ -87,17 +87,17 @@
 	skill_points = 22
 
 /datum/job/medical_trainee
-	title = "Aprendiz de Medico"
+	title = "Aprendiz de Médico"
 	department = "Medicina"
 	department_flag = MED
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Personal medico, and the Chief Medical Officer"
+	supervisors = "Personal médico, and the Chief Medical Officer"
 	selection_color = "#013d3b"
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	alt_titles = list(
-		"Aprendiz de Tecnico Medico",
-		"Aprendiz de Medico Militar",
+		"Aprendiz de Técnico Médico",
+		"Aprendiz de Médico Militar",
 		"Aprendiz de Enfermero")
 
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/doctor
@@ -130,15 +130,15 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/medical_trainee/get_description_blurb()
-	return "Eres un aprendiz de Medico Tecnico. Estas aprendiendo como tratar y sanar a la tripulacion del personal medico mas experimentado, sigues las ordenes del resto del equipo medico."
+	return "Eres un aprendiz de Médico Técnico. Estas aprendiendo como tratar y sanar a la tripulacion del personal médico mas experimentado, sigues las ordenes del resto del equipo médico."
 
 /datum/job/chemist
-	title = "Tecnico de Laboratorio"
+	title = "Técnico de Laboratorio"
 	department = "Medicina"
 	department_flag = MED
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Oficial Medico en Jefe, the Corporate Liaison y Personal Medico"
+	supervisors = "Oficial Médico en Jefe, the Corporate Liaison y Personal Médico"
 
 	selection_color = "#013d3b"
 	economic_power = 4
@@ -160,7 +160,7 @@
 	minimal_access = list()
 
 /datum/job/chemist/get_description_blurb()
-	return "Eres un Tecnico de Laboratorio. Haces medicina y trabajas en el laboratorio de medicina. No eres un doctor o un medico, pero tienes conocimientos basicos en esos campos. No deberias de tratar pacientes si no, proporcionar la medicina necesaria para hacerlo. sigues las ordenes de los Medicos y Tecnicos Medicos."
+	return "Eres un Técnico de Laboratorio. Haces medicina y trabajas en el laboratorio de medicina. No eres un doctor o un médico, pero tienes conocimientos basicos en esos campos. No deberias de tratar pacientes si no, proporcionar la medicina necesaria para hacerlo. sigues las ordenes de los Medicos y Tecnicos Medicos."
 
 /datum/job/psychiatrist
 	title = "Consejero"
@@ -169,7 +169,7 @@
 	economic_power = 5
 	minimum_character_age = list(SPECIES_HUMAN = 24)
 	minimal_player_age = 0
-	supervisors = "Oficial Medico en Jefe"
+	supervisors = "Oficial Médico en Jefe"
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/counselor
 
 	allowed_branches = list(
@@ -196,13 +196,13 @@
 
 	alt_titles = list(
 		"Psiquiatra",
-		"Psiquiatra Psiconico" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist,
+		"Psiquiatra Psiónico" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist,
 		"Mentalista" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist
 
 	)
 
 /datum/job/psychiatrist/get_description_blurb()
-	return "Eres el Psiquiatra. Tu responsabilidad principal es la salud mental y bienestar de la tripulacion. Sigues las ordenes del Oficial Medico en Jefe. A parte del Asesor Psiconico, eres el unico miembro abordo con habilidades Psiconicas."
+	return "Eres el Psiquiatra. Tu responsabilidad principal es la salud mental y bienestar de la tripulacion. Sigues las ordenes del Oficial Médico en Jefe. A parte del Asesor Psiconico, eres el unico miembro abordo con habilidades Psiconicas."
 
 /datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
 	psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)

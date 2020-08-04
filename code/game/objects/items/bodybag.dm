@@ -1,8 +1,8 @@
 //Also contains /obj/structure/closet/body_bag because I doubt anyone would think to look for bodybags in /object/structures
 
 /obj/item/bodybag
-	name = "bolsa para cadaveres"
-	desc = "Una bolsa plegada disenada para el almacenamiento y transporte de cadaveres."
+	name = "bolsa para cadáveres"
+	desc = "Una bolsa plegada disenada para el almacenamiento y transporte de cadáveres."
 	icon = 'icons/obj/closets/bodybag.dmi'
 	icon_state = "bodybag_folded"
 	w_class = ITEM_SIZE_SMALL
@@ -13,8 +13,8 @@
 
 
 /obj/item/weapon/storage/box/bodybags
-	name = "bolsas para cadaveres"
-	desc = "Esta caja contiene bolsas para cadaveres."
+	name = "bolsas para cadáveres"
+	desc = "Esta caja contiene bolsas para cadáveres."
 	icon_state = "bodybags"
 	New()
 		..()
@@ -28,8 +28,8 @@
 
 
 /obj/structure/closet/body_bag
-	name = "bolsa para cadaveres"
-	desc = "Una bolsa de plastico disenada para el almacenamiento y transporte de cadaveres."
+	name = "bolsa para cadáveres"
+	desc = "Una bolsa de plastico disenada para el almacenamiento y transporte de cadáveres."
 	icon = 'icons/obj/closets/bodybag.dmi'
 	closet_appearance = null
 	open_sound = 'sound/items/zip.ogg'
@@ -98,7 +98,7 @@
 
 /obj/item/robot_rack/body_bag
 	name = "estante para bolsas de estasis"
-	desc = "Un estante para transportar bolsas de estasis plegadas y bolsas para cadaveres."
+	desc = "Un estante para transportar bolsas de estasis plegadas y bolsas para cadáveres."
 	icon = 'icons/obj/closets/cryobag.dmi'
 	icon_state = "bodybag_folded"
 	object_type = /obj/item/bodybag
