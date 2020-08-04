@@ -133,7 +133,7 @@ main ui datum.
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta charset="ISO-8859-1">
+		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="vueui.css">
 	</head>
 	<body class="theme-nano dark-theme">
