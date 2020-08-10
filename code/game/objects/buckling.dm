@@ -86,8 +86,8 @@
 				"<span class='notice'>Escuchas el sonido del metal.</span>")
 		else
 			M.visible_message(\
-				"<span class='danger'>\The [M.name] está abrochado [src.name] por [user.name]!</span>",\
-				"<span class='danger'>Estás abrochado a la [src.name] por [user.name]!</span>",\
+				"<span class='danger'>\The [M.name] fue abrochado [src.name] por [user.name]!</span>",\
+				"<span class='danger'>Fuiste abrochado a la [src.name] por [user.name]!</span>",\
 				"<span class='notice'>Escuchas el sonido del metal.</span>")
 
 /obj/proc/user_unbuckle_mob(mob/user)
@@ -95,8 +95,8 @@
 	if(M)
 		if(M != user)
 			M.visible_message(\
-				"<span class='notice'>\The [M.name] ha sido desabrocado por [user.name]!</span>",\
-				"<span class='notice'>Has sido desabrocado de la [src.name] por [user.name].</span>",\
+				"<span class='notice'>\The [M.name] fue desabrochado por [user.name]!</span>",\
+				"<span class='notice'>Fuiste desabrochado de la [src.name] por [user.name].</span>",\
 				"<span class='notice'>Escuchas el sonido del metal.</span>")
 		else
 			M.visible_message(\

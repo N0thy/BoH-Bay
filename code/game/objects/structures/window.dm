@@ -1,5 +1,5 @@
 /obj/structure/window
-	name = "window"
+	name = "ventana"
 	desc = "A window."
 	icon = 'icons/obj/window.dmi'
 	density = 1
@@ -45,8 +45,8 @@
 	if(new_reinf_material)
 		reinf_material = SSmaterials.get_material_by_name(new_reinf_material)
 
-	name = "[reinf_material ? "reinforced " : ""][material.display_name] window"
-	desc = "A window pane made from [material.display_name]."
+	name = "[reinf_material ? "reforzada " : ""][material.display_name] ventana"
+	desc = "Un panel de cristal de [material.display_name]."
 	color =  material.icon_colour
 
 	if (start_dir)
@@ -77,19 +77,19 @@
 /obj/structure/window/examine(mob/user)
 	. = ..(user)
 	if(reinf_material)
-		to_chat(user, "<span class='notice'>It is reinforced with the [reinf_material.display_name] lattice.</span>")
+		to_chat(user, "<span class='notice'>Esta reforzado por una red de [reinf_material.display_name].</span>")
 	if(health == maxhealth)
-		to_chat(user, "<span class='notice'>It looks fully intact.</span>")
+		to_chat(user, "<span class='notice'>Parece totalmente intacto.</span>")
 	else
 		var/perc = health / maxhealth
 		if(perc > 0.75)
-			to_chat(user, "<span class='notice'>It has a few cracks.</span>")
+			to_chat(user, "<span class='notice'>Tiene algunas grietas.</span>")
 		else if(perc > 0.5)
-			to_chat(user, "<span class='warning'>It looks slightly damaged.</span>")
+			to_chat(user, "<span class='warning'>Parece ligeramente dañado.</span>")
 		else if(perc > 0.25)
-			to_chat(user, "<span class='warning'>It looks moderately damaged.</span>")
+			to_chat(user, "<span class='warning'>Parece moderadamente dañado.</span>")
 		else
-			to_chat(user, "<span class='danger'>It looks heavily damaged.</span>")
+			to_chat(user, "<span class='danger'>Parece muy dañado.</span>")
 
 /obj/structure/window/CanFluidPass(var/coming_from)
 	return (!is_fulltile() && coming_from != dir)
@@ -105,20 +105,20 @@
 		if(sound_effect)
 			playsound(loc, 'sound/effects/Glasshit.ogg', 100, 1)
 		if(health < maxhealth / 4 && initialhealth >= maxhealth / 4)
-			visible_message(SPAN_DANGER("\The [src] looks like it's about to shatter!"))
+			visible_message(SPAN_DANGER("\The [src] está a punto de romperse!"))
 			playsound(loc, "glasscrack", 100, 1)
 		else if(health < maxhealth / 2 && initialhealth >= maxhealth / 2)
-			visible_message(SPAN_WARNING("\The [src] looks seriously damaged!"))
+			visible_message(SPAN_WARNING("\The [src] parece seriamente dañado!"))
 			playsound(loc, "glasscrack", 100, 1)
 		else if(health < maxhealth * 3/4 && initialhealth >= maxhealth * 3/4)
-			visible_message(SPAN_WARNING("Cracks begin to appear in \the [src]!"))
+			visible_message(SPAN_WARNING("Grietas empiezan a aparecer en la [src.name]!"))
 			playsound(loc, "glasscrack", 100, 1)
 	return
 
 /obj/structure/window/proc/shatter(var/display_message = 1)
 	playsound(src, "shatter", 70, 1)
 	if(display_message)
-		visible_message("<span class='warning'>\The [src] shatters!</span>")
+		visible_message("<span class='warning'>\The [src] se rompe!</span>")
 
 	var/debris_count = is_fulltile() ? 4 : 1
 	for(var/i = 0 to debris_count)
@@ -162,7 +162,7 @@
 
 /obj/structure/window/hitby(atom/movable/AM, var/datum/thrownthing/TT)
 	..()
-	visible_message("<span class='danger'>[src] was hit by [AM].</span>")
+	visible_message("<span class='danger'>[src] fue golpeado por [AM].</span>")
 	var/tforce = 0
 	if(ismob(AM)) // All mobs have a multiplier and a size according to mob_defines.dm
 		var/mob/I = AM
@@ -180,7 +180,7 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(MUTATION_HULK in user.mutations)
 		user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!"))
-		user.visible_message("<span class='danger'>[user] smashes through [src]!</span>")
+		user.visible_message("<span class='danger'>[user] rompe a través de [src]!</span>")
 		user.do_attack_animation(src)
 		shatter()
 
@@ -194,9 +194,9 @@
 
 		playsound(src.loc, 'sound/effects/glassknock.ogg', 80, 1)
 		user.do_attack_animation(src)
-		user.visible_message("<span class='danger'>\The [user] bangs against \the [src]!</span>",
-							"<span class='danger'>You bang against \the [src]!</span>",
-							"You hear a banging sound.")
+		user.visible_message("<span class='danger'>\The [user] golpea contra el \the [src]!</span>",
+							"<span class='danger'>Golpeas contra el \the [src]!</span>",
+							"Escuchas el sonido de unos golpes.")
 	else
 		playsound(src.loc, 'sound/effects/glassknock.ogg', 80, 1)
 		user.visible_message("[user.name] knocks on the [src.name].",
@@ -303,7 +303,7 @@
 	if (G.assailant.a_intent != I_HURT)
 		return TRUE
 	if (!G.force_danger())
-		to_chat(G.assailant, "<span class='danger'>You need a better grip to do that!</span>")
+		to_chat(G.assailant, "<span class='danger'>Necesitas un mejor agarre para hacer eso!</span>")
 		return TRUE
 	var/def_zone = ran_zone(BP_HEAD, 20)
 	if(G.damage_stage() < 2)
@@ -325,11 +325,11 @@
 
 /obj/structure/window/rotate(mob/user)
 	if(!CanPhysicallyInteract(user))
-		to_chat(user, SPAN_NOTICE("You can't interact with \the [src] right now!"))
+		to_chat(user, SPAN_NOTICE("No puedes interactuar con la [src.name] ahora mismo!"))
 		return
 
 	if (anchored)
-		to_chat(user, SPAN_NOTICE("\The [src] is secured to the floor!"))
+		to_chat(user, SPAN_NOTICE("\The [src] esta asegurado en el suelo!"))
 		return
 
 	update_nearby_tiles(need_rebuild=1) //Compel updates before
@@ -421,7 +421,7 @@
 	polarized = 1
 
 /obj/structure/window/phoronbasic
-	name = "phoron window"
+	name = "ventana de phoron"
 	color = GLASS_COLOR_PHORON
 	init_material = MATERIAL_PHORON_GLASS
 
@@ -430,7 +430,7 @@
 	icon_state = "window_full"
 
 /obj/structure/window/phoronreinforced
-	name = "reinforced borosilicate window"
+	name = "ventana reforzada de borosilicato"
 	icon_state = "rwindow"
 	color = GLASS_COLOR_PHORON
 	init_material = MATERIAL_PHORON_GLASS
@@ -441,7 +441,7 @@
 	icon_state = "window_full"
 
 /obj/structure/window/reinforced
-	name = "reinforced window"
+	name = "ventana reforzada"
 	icon_state = "rwindow"
 	init_material = MATERIAL_GLASS
 	init_reinf_material = MATERIAL_STEEL
@@ -451,7 +451,7 @@
 	icon_state = "rwindow_full"
 
 /obj/structure/window/reinforced/tinted
-	name = "tinted window"
+	name = "ventana tintada"
 	opacity = 1
 	color = GLASS_COLOR_TINTED
 
@@ -461,15 +461,15 @@
 
 /obj/structure/window/shuttle
 	name = "shuttle window"
-	desc = "It looks rather strong. Might take a few good hits to shatter it."
+	desc = "Puede que tome algunos buenos golpes para destrozarlo."
 	icon = 'icons/obj/podwindows.dmi'
 	basestate = "w"
 	reinf_basestate = "w"
 	dir = 5
 
 /obj/structure/window/reinforced/polarized
-	name = "electrochromic window"
-	desc = "Adjusts its tint with voltage. Might take a few good hits to shatter it."
+	name = "ventana electrocomica"
+	desc = "Ajusta el tinte con el vontaje. Podrias necesitar unos cuantos golpes para poder romperlo."
 	basestate = "rwindow"
 	polarized = 1
 
@@ -492,10 +492,10 @@
 		return TRUE
 
 /obj/machinery/button/windowtint
-	name = "window tint control"
+	name = "control del tinte de la ventana"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "light0"
-	desc = "A remote control switch for electrochromic windows."
+	desc = "Un control remoto para ventanas electrocrómicas."
 	var/id
 	var/range = 7
 	stock_part_presets = null // This isn't a radio-enabled button; it communicates with nearby structures in view.
@@ -505,7 +505,7 @@
 
 /obj/machinery/button/windowtint/attackby(obj/item/device/W as obj, mob/user as mob)
 	if(isMultitool(W))
-		var/t = sanitizeSafe(input(user, "Enter the ID for the button.", src.name, id), MAX_NAME_LEN)
+		var/t = sanitizeSafe(input(user, "Coloca la ID para el botón.", src.name, id), MAX_NAME_LEN)
 		if(user.incapacitated() && !user.Adjacent(src))
 			return
 		if (user.get_active_hand() != W)
@@ -515,7 +515,7 @@
 		t = sanitizeSafe(t, MAX_NAME_LEN)
 		if (t)
 			src.id = t
-			to_chat(user, "<span class='notice'>The new ID of the button is [id]</span>")
+			to_chat(user, "<span class='notice'>La nueva ID para el botón es [id]</span>")
 		return
 	if(istype(W, /obj/item/weapon/screwdriver))
 		new /obj/item/frame/light_switch/windowtint(user.loc, 1)
@@ -559,30 +559,30 @@
 /proc/place_window(mob/user, loc, dir_to_set, obj/item/stack/material/ST)
 	var/required_amount = (dir_to_set & (dir_to_set - 1)) ? 4 : 1
 	if (!ST.can_use(required_amount))
-		to_chat(user, "<span class='notice'>You do not have enough sheets.</span>")
+		to_chat(user, "<span class='notice'>No tienes suficientes laminas.</span>")
 		return
 	for(var/obj/structure/window/WINDOW in loc)
 		if(WINDOW.dir == dir_to_set)
-			to_chat(user, "<span class='notice'>There is already a window facing this way there.</span>")
+			to_chat(user, "<span class='notice'>Ya hay una ventana mirando en esa dirección aquí.</span>")
 			return
 		if(WINDOW.is_fulltile() && (dir_to_set & (dir_to_set - 1))) //two fulltile windows
-			to_chat(user, "<span class='notice'>There is already a window there.</span>")
+			to_chat(user, "<span class='notice'>Ya hay una ventana aquí.</span>")
 			return
-	to_chat(user, "<span class='notice'>You start placing the window.</span>")
+	to_chat(user, "<span class='notice'>Empiezas a colocar la ventana.</span>")
 	if(do_after(user,20,src))
 		for(var/obj/structure/window/WINDOW in loc)
 			if(WINDOW.dir == dir_to_set)//checking this for a 2nd time to check if a window was made while we were waiting.
-				to_chat(user, "<span class='notice'>There is already a window facing this way there.</span>")
+				to_chat(user, "<span class='notice'>Ya hay una ventana mirando en esa dirección aquí.</span>")
 				return
 			if(WINDOW.is_fulltile() && (dir_to_set & (dir_to_set - 1)))
-				to_chat(user, "<span class='notice'>There is already a window there.</span>")
+				to_chat(user, "<span class='notice'>Ya hay una ventana aquí.</span>")
 				return
 
 		if (ST.use(required_amount))
 			var/obj/structure/window/WD = new(loc, dir_to_set, FALSE, ST.material.name, ST.reinf_material && ST.reinf_material.name)
-			to_chat(user, "<span class='notice'>You place [WD].</span>")
+			to_chat(user, "<span class='notice'>Colocas [WD].</span>")
 			WD.construction_state = 0
 			WD.set_anchored(FALSE)
 		else
-			to_chat(user, "<span class='notice'>You do not have enough sheets.</span>")
+			to_chat(user, "<span class='notice'>No tienes suficientes laminas.</span>")
 			return
