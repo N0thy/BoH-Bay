@@ -76,5 +76,10 @@
 		return 0
 	return player_setup.update_setup(preferences, character)
 
+	S["enable_personal_chat_color"]			>> enable_personal_chat_color
+	S["personal_chat_color"]			>> personal_chat_color
+	enable_personal_chat_color	= sanitize_integer(enable_personal_chat_color, 0, 1, initial(enable_personal_chat_color))
+	personal_chat_color	= sanitize_hexcolor(personal_chat_color, 6, 1, "#FFFFFF")
+
 #undef SAVEFILE_VERSION_MAX
 #undef SAVEFILE_VERSION_MIN

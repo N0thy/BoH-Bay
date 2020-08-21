@@ -27,6 +27,10 @@ datum/preferences
 	var/datum/category_collection/player_setup_collection/player_setup
 	var/datum/browser/panel
 
+	//cha cha cha, muriendo en Runechat
+	var/enable_personal_chat_color = FALSE
+	var/personal_chat_color = "#ffffff"
+
 /datum/preferences/New(client/C)
 	if(istype(C))
 		client = C
@@ -71,6 +75,18 @@ datum/preferences
 		to_chat(user, "<span class='danger'>No mob exists for the given client!</span>")
 		close_load_dialog(user)
 		return
+			//Skyrat changes begin
+			if("personal_chat_color")
+				var/new_chat_color = input(user, "Choose your character's runechat color:", "Character Preference",personal_chat_color) as color|null
+				if(new_chat_color)
+					var/list/temp_hsl = rgb2hsl(ReadRGB(new_chat_color)[1],ReadRGB(new_chat_color)[2],ReadRGB(new_chat_color)[3])
+					if(new_chat_color == "#000000")
+						personal_chat_color = "#FFFFFF"
+					else if(temp_hsl[3] >= 0.65 && temp_hsl[2] >= 0.15)
+						personal_chat_color = sanitize_hexcolor(new_chat_color, 6, 1)
+					else
+						to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+				//End of skyrat changes
 
 	var/dat = "<html><body><center>"
 

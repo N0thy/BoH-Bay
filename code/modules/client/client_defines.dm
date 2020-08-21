@@ -57,3 +57,7 @@
 	var/datum/chatOutput/chatOutput
 
 	var/fullscreen = FALSE
+
+	//dying runechat
+	/// Messages currently seen by this client
+	var/list/seen_messages

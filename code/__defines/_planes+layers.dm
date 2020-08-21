@@ -191,6 +191,9 @@ What is the naming convention for planes or layers?
 //This is difference between planes used for atoms and effects
 #define PLANE_DIFFERENCE              3
 
+//Intento de portear RuneChat... by Nothy ;_;//
+#define CHAT_LAYER 20.35
+
 /atom
 	plane = DEFAULT_PLANE
 
