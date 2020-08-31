@@ -226,6 +226,16 @@
 	result_quantity = 4
 	reagent_mix = RECIPE_REAGENT_REPLACE
 
+/datum/recipe/macaron
+	appliance = OVEN
+	reagents = list(/datum/reagent/nutriment/flour = 5, /datum/reagent/sugar = 10)
+	items = list(
+		/obj/item/weapon/reagent_containers/food/snacks/dough
+	)
+	result = /obj/item/weapon/reagent_containers/food/snacks/macaron
+	result_quantity = 4
+	reagent_mix = RECIPE_REAGENT_REPLACE
+
 /datum/recipe/fortunecookie
 	appliance = OVEN
 	reagents = list(/datum/reagent/sugar = 5)

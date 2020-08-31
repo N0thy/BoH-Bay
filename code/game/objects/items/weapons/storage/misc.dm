@@ -45,6 +45,24 @@
 /obj/item/weapon/storage/box/donut/empty
 	startswith = null
 
+/obj/item/weapon/storage/box/macaron
+	icon = 'icons/obj/aurora/food.dmi'
+	icon_state = "macaronbox"
+	name = "caja de macarons"
+	can_hold = list(/obj/item/weapon/reagent_containers/food/snacks/macaron)
+	foldable = /obj/item/stack/material/cardboard
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/macaron/normal = 7)
+
+/obj/item/weapon/storage/box/macaron/on_update_icon()
+	overlays.Cut()
+	var/i = 0
+	for(var/obj/item/weapon/reagent_containers/food/snacks/macaron/D in contents)
+		overlays += image('icons/obj/aurora/food.dmi', "[i][D.overlay_state]")
+		i++
+
+/obj/item/weapon/storage/box/macaron/empty
+	startswith = null
+
 //misc tobacco nonsense
 /obj/item/weapon/storage/cigpaper
 	name = "\improper Gen. Eric cigarette paper"
