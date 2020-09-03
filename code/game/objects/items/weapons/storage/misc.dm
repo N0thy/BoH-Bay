@@ -153,7 +153,8 @@
 /obj/item/weapon/storage/chewables/candy/cookies
 	name = "pack of Getmore Cookies"
 	desc = "A pack of delicious cookies, and possibly the only product in Getmores Chocolate Corp lineup that has any trace of chocolate in it."
-	icon_state = "cookiebag"
+	icon = 'icons/obj/aurora/food.dmi'
+	icon_state = "cookiesnack"
 	max_storage_space = 6
 	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/cookie = 6)
 	make_exact_fit()
