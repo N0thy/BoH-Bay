@@ -1110,7 +1110,7 @@
 
 /area/medical/reslab
 	name = "\improper Bahia Medica - Laboratorio de resurección"
-	req_access = list(access_surgery)
+	req_access = list(access_morgue)
 
 /area/medical/virology
 	name = "\improper Bahia Medica - Virologia"
@@ -1680,19 +1680,19 @@
 	icon_state = "purple"
 
 /area/security/infantry
-	name = "\improper Infanteria - Preparacion"
+	name = "\improper Infanteria - Sala principal"
 	icon_state = "crew_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 	req_access = list(access_infantry)
 
 /area/security/infantry/gear
-	name = "\improper Infanteria - Tecnico"
+	name = "\improper Infanteria - Preparación"
 	icon = 'icons/boh/area.dmi'
 	icon_state = "triage"
-	req_access = list(access_inftech)
+	req_access = list(access_infantry)
 
 /area/security/infantry/com
-	name = "\improper Infanteria - Sala del lider de escuadron"
+	name = "\improper Infanteria - Oficila del lider de escuadron"
 	icon = 'icons/boh/area.dmi'
 	icon_state = "triage"
 	req_access = list(access_infcom)
