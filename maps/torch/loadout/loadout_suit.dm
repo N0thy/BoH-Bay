@@ -115,3 +115,22 @@
 	display_name = "Agent's jacket"
 	path = /obj/item/clothing/suit/storage/toggle/agent_jacket
 	allowed_roles = list(/datum/job/detective)
+
+/datum/gear/suit/wintercoat_fleet
+	display_name = "Abrigo de invierno, flota"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet
+	cost = 2
+	allowed_branches = NT_BRANCHES
+	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, /datum/job/sea, /datum/job/bridgeofficer)
+
+/datum/gear/suit/wintercoat_solgov
+	display_name = "Abrigo de invierno, expedicion"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/solgov
+	cost = 2
+	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, /datum/job/sea, /datum/job/bridgeofficer)
+
+/datum/gear/suit/wintercoat_marines
+	display_name = "Abrigo de invierno, marines."
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army
+	cost = 2
+	allowed_roles = list(/datum/job/squad_lead, /datum/job/grunt, /datum/job/sea)

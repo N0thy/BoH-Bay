@@ -169,3 +169,8 @@
 	display_name = "balaclava"
 	path = /obj/item/clothing/mask/balaclava
 	slot = slot_wear_mask
+
+/datum/gear/head/pilothelmet
+	display_name = "Casco Aviador"
+	path = /obj/item/clothing/mask/pilothelmet
+	slot = slot_wear_mask
