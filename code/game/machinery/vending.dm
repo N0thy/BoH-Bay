@@ -219,7 +219,7 @@
 	if(currently_vending.price > cashmoney.worth)
 		// This is not a status display message, since it's something the character
 		// themselves is meant to see BEFORE putting the money in
-		to_chat(usr, "\icon[cashmoney] <span class='warning'>That is not enough money.</span>")
+		to_chat(usr, "[icon2html(cashmoney, usr)] <span class='warning'>That is not enough money.</span>")
 		return 0
 
 	visible_message("<span class='info'>\The [usr] inserts some cash into \the [src].</span>")
@@ -733,7 +733,6 @@
 					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 1, /obj/item/weapon/reagent_containers/food/snacks/tastybread = 2)
 
 
-
 /obj/machinery/vending/cola
 	name = "Robust Softdrinks"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
@@ -754,6 +753,30 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 2,/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 1,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 1)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
+
+obj/machinery/vending/cola/manaos
+	name = "Manaos"
+	desc = "Una maquina de bebidas unicamente de Manaos, marca \"Manaos\"."
+	icon_state = "Manaos_Machine"
+	icon_vend = "Manaos_Machine-vend"
+	icon_deny = "Manaos_Machine-deny"
+	vend_delay = 11
+	base_type = /obj/machinery/vending/cola
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_cola = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_manzana = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_limalimon = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_naranja = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_uva = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_limon = 5)
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_cola = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_manzana = 4,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_limalimon = 4,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_naranja = 4,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_uva = 4,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/manaos_limon = 4)
+
+	idle_power_usage = 211
+
 
 /obj/machinery/vending/fitness
 	name = "SweatMAX"
@@ -901,18 +924,53 @@
 	icon_vend = "med-vend"
 	vend_delay = 18
 	base_type = /obj/machinery/vending/medical
+	req_access = list(list(access_medical,access_chemistry))
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
 	req_access = list(access_medical_equip)
-	products = list(/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 4,
-					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/toxin = 4,
-					/obj/item/weapon/reagent_containers/syringe/antiviral = 4,/obj/item/weapon/reagent_containers/syringe = 12,
-					/obj/item/device/scanner/health = 5,/obj/item/weapon/reagent_containers/glass/beaker = 4, /obj/item/weapon/reagent_containers/dropper = 2,
-					/obj/item/stack/medical/advanced/bruise_pack = 3, /obj/item/stack/medical/advanced/ointment = 3, /obj/item/stack/medical/splint = 2,
-					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 4)
-	contraband = list(/obj/item/clothing/mask/chewable/candy/lolli/meds = 8,
-					/obj/item/weapon/reagent_containers/pill/tox = 3,/obj/item/weapon/reagent_containers/pill/stox = 4,/obj/item/weapon/reagent_containers/pill/antitox = 6,
-					/obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain = 2)
+	products = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/bicaridine = 3,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/kelotane = 3,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/dylovene = 3,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/dexalin = 3,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/inaprovaline = 2,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/antirad = 2,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/alkysine = 2,
+					/obj/item/weapon/reagent_containers/syringe/antiviral = 5,
+					/obj/item/stack/medical/advanced/bruise_pack = 5,
+					/obj/item/stack/medical/advanced/ointment = 5,
+					/obj/item/stack/medical/splint = 5,
+					/obj/item/device/scanner/health = 5)
+	contraband = list(/obj/item/weapon/reagent_containers/pill/stox = 5,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain = 1,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/peridaxon = 1,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/hypeross = 1,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/kompoton = 1)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
+
+/obj/machinery/vending/medical/abandonado
+	name = "NanoMed Plus abandonado"
+	desc = "Un dispensador de medicinas abandonad. Te preguntas si aun tendra algo."
+	icon_state = "med"
+	icon_deny = "med-deny"
+	icon_vend = "med-vend"
+	vend_delay = 18
+	base_type = /obj/machinery/vending/medical
+	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
+	req_access = list(access_medical_equip)
+	products = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/bicaridine = 2,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/kelotane = 1,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/dylovene = 2,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/dexalin = 1,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/inaprovaline = 1,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/antirad = 2,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/alkysine = 1,
+					/obj/item/weapon/reagent_containers/syringe/antiviral = 2,
+					/obj/item/stack/medical/advanced/bruise_pack = 3,
+					/obj/item/stack/medical/advanced/ointment = 2,
+					/obj/item/stack/medical/splint = 2,
+					/obj/item/device/scanner/health = 1)
+	idle_power_usage = 211
 
 
 //This one's from bay12
@@ -934,15 +992,11 @@
 	base_type = /obj/machinery/vending/wallmed1
 	density = 0 //It is wall-mounted, and thus, not dense. --Superxpdude
 	products = list(
-		/obj/item/stack/medical/bruise_pack = 3,
-		/obj/item/stack/medical/ointment = 3,
-		/obj/item/weapon/reagent_containers/pill/paracetamol = 4,
-		/obj/item/weapon/storage/med_pouch/trauma,
-		/obj/item/weapon/storage/med_pouch/burn,
-		/obj/item/weapon/storage/med_pouch/oxyloss,
-		/obj/item/weapon/storage/med_pouch/toxin
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/bicaridine,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/kelotane,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/dylovene,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/dexalin
 		)
-	contraband = list(/obj/item/weapon/reagent_containers/syringe/antitoxin = 4,/obj/item/weapon/reagent_containers/syringe/antiviral = 4,/obj/item/weapon/reagent_containers/pill/tox = 1)
 
 /obj/machinery/vending/wallmed2
 	name = "NanoMed Mini"
@@ -954,16 +1008,11 @@
 	density = 0 //It is wall-mounted, and thus, not dense. --Superxpdude
 	base_type = /obj/machinery/vending/wallmed2
 	products = list(
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector = 5,
-		/obj/item/stack/medical/bruise_pack = 4,
-		/obj/item/stack/medical/ointment = 4,
-		/obj/item/weapon/storage/med_pouch/trauma,
-		/obj/item/weapon/storage/med_pouch/burn,
-		/obj/item/weapon/storage/med_pouch/oxyloss,
-		/obj/item/weapon/storage/med_pouch/toxin,
-		/obj/item/weapon/storage/med_pouch/radiation
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/bicaridine,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/kelotane,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/dylovene,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/dexalin
 		)
-	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3, /obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2)
 
 /obj/machinery/vending/security
 	name = "SecTech"
@@ -984,6 +1033,7 @@
 		/obj/item/weapon/storage/box/evidence = 6,
 		/obj/item/weapon/tape_roll = 2,
 		/obj/item/ammo_magazine/pistol/double/pepperball = 6,
+		/obj/item/ammo_magazine/speedloader/magnum/detective  = 6,
 		/obj/item/ammo_magazine/pistol/double/rubber = 2,
 		/obj/item/clothing/mask/gas/death_commando = 3)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,/obj/item/weapon/storage/box/donut = 2)
@@ -1250,7 +1300,7 @@
 	vend_delay = 15
 	base_type = /obj/machinery/vending/fashionvend
 	vend_reply = "Absolutamente precioso"
-	product_ads = "Impresiona al amor de tu vida; No te veas pobre, luce rico; Los precios mas bajos estan garantizados."
+	product_ads = "Impresiona al amor de tu vida;No te veas pobre, luce rico;Los precios mas bajos estan garantizados."
 	products = list(/obj/item/clothing/head/beret = 2,
 					/obj/item/clothing/mask/gas/mime,
 					/obj/item/clothing/mask/gas/sexymime,
@@ -1322,7 +1372,7 @@
 	vend_delay = 15
 	base_type = /obj/machinery/vending/hatvendor
 	vend_reply = "Absolutamente precioso"
-	product_ads = "Impresiona al amor de tu vida; No te veas pobre, luce rico!"
+	product_ads = "Impresiona al amor de tu vida;No te veas pobre, luce rico!"
 	products = list(/obj/item/clothing/head/bandana/green,
 					/obj/item/clothing/head/beaverhat,
 					/obj/item/clothing/head/beret = 2,
@@ -1358,7 +1408,7 @@
 	vend_delay = 15
 	base_type = /obj/machinery/vending/shoevendor
 	vend_reply = "Absolutamente precioso"
-	product_ads = "Impresiona al amor de tu vida; No te veas pobre, luce rico!"
+	product_ads = "Impresiona al amor de tu vida;No te veas pobre, luce rico!"
 	products = list(/obj/item/clothing/shoes/athletic = 3,
 					/obj/item/clothing/shoes/black = 3,
 				    /obj/item/clothing/shoes/blue = 3,
@@ -1383,7 +1433,7 @@
 	vend_delay = 15
 	base_type = /obj/machinery/vending/suitvendor
 	vend_reply = "Absolutamente precioso"
-	product_ads = "Impresiona al amor de tu vida; No te veas pobre, luce rico!"
+	product_ads = "Impresiona al amor de tu vida;No te veas pobre, luce rico!"
 	products = list(/obj/item/clothing/accessory/black = 3,
 					/obj/item/clothing/accessory/blue = 3,
 					/obj/item/clothing/accessory/brown = 3,
@@ -1391,8 +1441,8 @@
 					/obj/item/clothing/accessory/yellow = 3,
 					/obj/item/clothing/accessory/bowtie/ugly,
 					/obj/item/clothing/accessory/cloak = 3,
-					/obj/item/clothing/suit/apron/overalls = 2,
-					/obj/item/clothing/suit/leathercoat = 2,
+					/obj/item/clothing/accessory/toggleable/hawaii/red = 3,
+					/obj/item/clothing/accessory/toggleable/hawaii = 3,
 					/obj/item/clothing/under/blackskirt = 2,
 					/obj/item/clothing/under/color/black = 3,
 					/obj/item/clothing/under/color/blue = 3,
@@ -1404,7 +1454,6 @@
 					/obj/item/clothing/under/color/red = 3,
 					/obj/item/clothing/under/color/white = 3,
 					/obj/item/clothing/under/color/yellow = 3,
-					/obj/item/clothing/suit/poncho/colored,
 					/obj/item/clothing/under/dress/dress_fire,
 					/obj/item/clothing/under/dress/dress_orange,
 					/obj/item/clothing/under/dress/dress_saloon,
@@ -1437,14 +1486,19 @@
 					/obj/item/clothing/under/lawyer/infil,
 					/obj/item/clothing/under/lawyer/infil/fem,
 					/obj/item/clothing/under/lawyer/purpsuit,
+					/obj/item/clothing/under/jrsuit,
+					/obj/item/clothing/under/turtleneck/sci = 2,
+					/obj/item/clothing/under/turtleneck/sec = 2,
+					/obj/item/clothing/under/turtleneck/med = 2,
+					/obj/item/clothing/under/turtleneck/eng = 2,
 					/obj/item/clothing/suit/storage/toggle/suit/purple,
 					/obj/item/clothing/suit/storage/toggle/suit/blue,
 					/obj/item/clothing/suit/storage/toggle/suit/black = 2,
 					/obj/item/clothing/suit/storage/toggle/bomber = 2,
 					/obj/item/clothing/suit/storage/leather_jacket = 2,
-					/obj/item/clothing/accessory/toggleable/hawaii/red = 3,
-					/obj/item/clothing/accessory/toggleable/hawaii = 3,
-					/obj/item/clothing/under/jrsuit,
+					/obj/item/clothing/suit/apron/overalls = 2,
+					/obj/item/clothing/suit/leathercoat = 2,
+					/obj/item/clothing/suit/poncho/colored,
 					/obj/item/clothing/gloves/fingerless = 2
 					)
 
@@ -1498,7 +1552,7 @@
 	name = "Vendedor de trajes de bano"
 	desc = "Todo tipo de trajes de bano."
 	vend_delay = 15
-	product_slogans = "Divercion en la piscina!"
+	product_slogans = "Diversion en la piscina!"
 
 	icon_state = "lavatory"
 	icon_deny = "lavatory-deny"
@@ -1608,10 +1662,6 @@
 					/obj/item/toy/figure/zsle)
 
 	contraband = list(/obj/item/toy/figure/vlad)
-
-
-
-
 
 /obj/machinery/vending/snix/on_update_icon()
 	..()

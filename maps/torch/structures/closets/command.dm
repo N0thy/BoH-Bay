@@ -77,6 +77,8 @@
 		/obj/item/weapon/folder/blue,
 		/obj/item/weapon/material/knife/folding/swiss,
 		/obj/item/weapon/sd_key,
+		/obj/item/clothing/head/caphat/hop,
+		/obj/item/clothing/under/rank/hop,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/captain, /obj/item/weapon/storage/backpack/satchel/cap)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/captain, /obj/item/weapon/storage/backpack/messenger/com))
 	)
@@ -131,7 +133,7 @@
 	)
 
 /obj/structure/closet/secure_closet/bs
-	name = "armario del blueshield"
+	name = "armario del Blueshield"
 	req_access = list(access_bs)
 	closet_appearance = /decl/closet_appearance/secure_closet/torch/command/bo
 
@@ -140,6 +142,8 @@
 		/obj/item/device/radio,
 		/obj/item/device/taperecorder,
 		/obj/item/device/flash,
+		/obj/item/weapon/melee/baton/loaded,
+		/obj/item/weapon/handcuffs,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/folder/blue,
 		/obj/item/modular_computer/tablet/lease/preset/command,
@@ -153,6 +157,7 @@
 		/obj/item/clothing/gloves/bs_combat,
 		/obj/item/weapon/storage/backpack/bs_mochila,
 		/obj/item/clothing/glasses/sunglasses/sechud,
+		/obj/item/clothing/glasses/hud/health/sun,
 		/obj/item/weapon/gun/energy/bs_secure)
 
 /obj/structure/closet/secure_closet/psiadvisor
